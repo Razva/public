@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+
+  body {
+    @apply m-0;
+  }
+}
+
+@layer components {
+  .demo-page {
+    @apply min-h-screen bg-slate-50 p-12 text-slate-900;
+    font-family:
+      ui-sans-serif,
+      system-ui,
+      sans-serif,
+      "Apple Color Emoji",
+      "Segoe UI Emoji",
+      "Segoe UI Symbol",
+      "Noto Color Emoji";
+  }
+
+  .demo-title {
+    @apply mb-2 text-2xl font-semibold leading-tight;
+  }
+
+  .demo-copy {
+    @apply mb-8 text-slate-600 md:whitespace-nowrap;
+  }
+
+  .demo-link {
+    @apply text-indigo-600 underline;
+  }
+
+  .dropdown-root {
+    @apply relative inline-grid w-max max-w-sm;
+  }
+
+  .dropdown-measure {
+    @apply pointer-events-none invisible col-start-1 row-start-1 grid text-sm;
+  }
+
+  .dropdown-measure-menu-frame {
+    @apply col-start-1 row-start-1 h-0 overflow-hidden;
+  }
+
+  .dropdown-measure-menu {
+    @apply inline-flex flex-col items-stretch gap-1 rounded-md border border-slate-200 p-1 text-sm;
+  }
+
+  .dropdown-measure-option {
+    @apply inline-flex h-9 w-max items-center gap-2 whitespace-nowrap rounded-md border border-transparent px-3;
+  }
+
+  .dropdown-trigger {
+    @apply col-start-1 row-start-1 inline-flex h-10 w-full items-center justify-between gap-2 rounded-md border border-slate-300 bg-white px-3 text-sm text-slate-900 hover:bg-slate-50;
+  }
+
+  .dropdown-search {
+    @apply absolute inset-0 z-20 col-start-1 row-start-1 inline-flex h-10 w-full items-center justify-between gap-2 rounded-md border border-slate-300 bg-white px-3 text-sm text-slate-900;
+  }
+
+  .dropdown-input {
+    @apply w-0 min-w-0 flex-1 border-0 bg-transparent p-0 font-[inherit] outline-none;
+  }
+
+  .dropdown-menu {
+    @apply absolute left-0 top-full z-10 mt-1 w-full rounded-md border border-slate-200 bg-white p-1 text-sm shadow-lg;
+  }
+
+  .dropdown-option {
+    @apply flex h-9 w-full items-center gap-2 rounded-md border border-transparent bg-transparent px-3 text-left text-slate-900 hover:border-slate-200 hover:bg-slate-50;
+    font: inherit;
+  }
+
+  .dropdown-option-active {
+    @apply border-slate-200 bg-slate-50;
+  }
+
+  .dropdown-option-selected {
+    @apply text-indigo-600;
+  }
+
+  .dropdown-icon {
+    @apply size-[1em] shrink-0;
+  }
+
+  .dropdown-text {
+    @apply min-w-0 flex-1 truncate text-left;
+  }
+
+  .dropdown-placeholder {
+    @apply text-slate-600;
+  }
+
+  .dropdown-row-text {
+    @apply truncate;
+  }
+
+  .dropdown-hidden {
+    @apply hidden;
+  }
+}

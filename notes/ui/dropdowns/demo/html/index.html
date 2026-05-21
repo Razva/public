@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HTML Dropdown Demo</title>
+    <script type="module" src="dropdown-demo.js"></script>
+  </head>
+  <body class="demo-page">
+    <main>
+      <h1 class="demo-title">HTML Dropdown Demo</h1>
+      <p class="demo-copy">
+        For more information about building these dropdowns, see
+        <a class="demo-link" href="https://github.com/Razva/public/blob/main/notes/ui/dropdowns/README.md">Dropdowns That Size Correctly</a>.
+      </p>
+
+      <div class="dropdown-root" data-dropdown>
+        <div class="dropdown-measure" aria-hidden="true">
+          <button class="dropdown-trigger" tabindex="-1" type="button">
+            <svg class="dropdown-icon"><use href="lucide-sprite.svg#icon-search"></use></svg>
+            <span class="dropdown-text">Type/Select</span>
+            <svg class="dropdown-icon"><use href="lucide-sprite.svg#icon-chevron-down"></use></svg>
+          </button>
+          <div class="dropdown-measure-menu-frame">
+            <div class="dropdown-measure-menu" data-measure-menu></div>
+          </div>
+        </div>
+
+        <button class="dropdown-trigger" data-trigger type="button">
+          <svg class="dropdown-icon" data-trigger-icon>
+            <use href="lucide-sprite.svg#icon-search"></use>
+          </svg>
+          <span class="dropdown-text dropdown-placeholder" data-value>Type/Select</span>
+          <svg class="dropdown-icon"><use href="lucide-sprite.svg#icon-chevron-down"></use></svg>
+        </button>
+
+        <label class="dropdown-search dropdown-hidden" data-search>
+          <svg class="dropdown-icon"><use href="lucide-sprite.svg#icon-search"></use></svg>
+          <input class="dropdown-input" aria-label="Search options" data-input />
+          <svg class="dropdown-icon"><use href="lucide-sprite.svg#icon-chevron-down"></use></svg>
+        </label>
+
+        <div class="dropdown-menu dropdown-hidden" data-menu></div>
+      </div>
+    </main>
+  </body>
+</html>

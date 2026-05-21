@@ -1,0 +1,59 @@
+name: Deploy GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+  pages: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: notes/ui/dropdowns/demo/tsx/package-lock.json
+
+      - name: Build React dropdown demo
+        working-directory: notes/ui/dropdowns/demo/tsx
+        run: |
+          npm ci
+          npm run build
+
+      - name: Prepare static site
+        run: |
+          mkdir -p _site
+          cp -R README.md index.html notes _site/
+          rm -rf _site/notes/ui/dropdowns/demo/tsx
+          mkdir -p _site/notes/ui/dropdowns/demo/tsx
+          cp -R notes/ui/dropdowns/demo/tsx/dist/. _site/notes/ui/dropdowns/demo/tsx/
+          touch _site/.nojekyll
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
