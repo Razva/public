@@ -14,8 +14,8 @@ The desired behavior is simple:
 
 ## Live Demos
 
-- [HTML Demo](demo/html/)
-- [React Demo](demo/tsx/)
+- [HTML Demo](https://razva.github.io/public/notes/ui/dropdowns/demo/html/)
+- [React Demo](https://razva.github.io/public/notes/ui/dropdowns/demo/tsx/)
 
 Both demos use the same shared CSS contract: [`demo/shared/dropdown-demo.css`](demo/shared/dropdown-demo.css).
 
