@@ -14,7 +14,11 @@ Use the project’s canonical source locations. If a file is unavailable, inacce
 
 Do not use stale browser copies, unrelated local checkouts, old repositories, copied code from previous apps, or memory from another project unless explicitly authorized in this session.
 
+For private or hosted source-of-truth material, prefer the authenticated provider-native CLI or connector. Do not substitute cached browser pages, guessed raw URLs, or unrelated local clones when canonical authenticated access fails.
+
 If older notes conflict with newer current-context, roadmap, docs, or session logs, prefer the newest/current source and call out the conflict.
+
+If a referenced path, component name, schema, route, provider concept, or architectural structure is not present in the current repository or source-of-truth architecture, treat it as potentially stale context. Verify it before using it; do not silently recreate or adapt it.
 
 # Session Identity
 
@@ -59,6 +63,8 @@ Before editing:
 - use the project’s approved Git identity for commits;
 - never commit as an assistant, bot, automation, model, or placeholder identity.
 
+Before relying on branch state, fetch the relevant remote refs when access is available. Do not pull, merge, rebase, switch branches, or discard changes unless the task requires it or the user explicitly authorizes it.
+
 Before pushing or opening a PR, confirm:
 
 - branch;
@@ -94,12 +100,15 @@ Use the existing approved UI system and primitives.
 - Do not create custom CSS classes unless the project’s UI system allows them.
 - Preserve independent lightweight UI state across view/mode/context switches unless a real context change requires reset.
 - Include loading, empty, error, disabled, permission, and focus states for real workflows.
-- For UI work, verify relevant desktop/mobile viewports visually before calling it done. If browser tooling is unavailable, say so.
+- Do not run Playwright, browser automation, or end-to-end browser tools unless the user explicitly requests them for the current task.
+- Do not capture browser screenshots unless the user explicitly requests them.
+- For UI work, rely on focused component tests and static checks by default. Clearly report when visual/browser verification was not performed.
 
 # Data, Provider, And Security Guardrails
 
 - External/provider writes must happen only from explicit user actions or approved workflows.
 - Never write to external systems from rendering, loading, polling, background reads, or incidental state changes.
+- Tests, previews, browser automation, rendering, polling, and verification must not write to production or external systems unless the user explicitly authorizes that workflow.
 - Keep customer/user communications inside approved product workflows and channels.
 - If a change affects data shape, permissions, external boundaries, or public behavior, state migration, compatibility, and rollout impact before coding.
 - Avoid uncoordinated client fanout, repeated provider setup, and blocking primary UI on non-critical secondary data.
@@ -118,20 +127,31 @@ Use the existing approved UI system and primitives.
 - Do not create or update the public README unless explicitly asked.
 - Batch private memory updates by coherent work chunk, not every small edit.
 - Never store secrets, credentials, raw customer data, tokens, cookies, or private payloads in memory.
+- When the project maintains third-party integration reference notes, update them after verifying new behavior. Distinguish documented facts with primary-source links, project implementation choices, observed real-instance behavior, and behavior inferred from tests or experiments. Do not present observations or inferences as documented guarantees.
 
 # Verification
 
-Run checks appropriate to the task.
+Run verification proportionate to the current change.
 
-Default expectations:
+Default checks:
 
+- inspect the relevant diff;
 - run focused tests for changed behavior;
-- run lint and typecheck before completion;
+- run lint and typecheck when applicable;
 - run build for app or framework changes;
+
+Triggered checks:
+
 - run dependency audit when dependencies change;
 - validate Docker/Compose config when service config changes;
-- run browser/responsive verification for UI changes;
-- run security or secret scans when required by the workflow or before publishing.
+- run the repository’s established secret scan before publishing when applicable.
+
+Explicit opt-in checks:
+
+- do not run Playwright, browser automation, end-to-end browser tools, or capture screenshots unless the user explicitly requests them for the current task;
+- never run heavyweight repository security scans automatically, including after commits, during implementation, branch verification, PR preparation, pushes, or merges;
+- run a heavyweight repository security scan only when the user explicitly requests one for the current task;
+- do not launch additional security scans after code changes or a previous scan unless the user explicitly requests them.
 
 Before reporting completion, state:
 
@@ -142,5 +162,12 @@ Before reporting completion, state:
 - largest handwritten files when the change is broad;
 - known risks or checks that could not be run;
 - working-tree status when relevant.
+
+If commits, pushes, or pull requests were part of the task, also state:
+
+- branch and target branch;
+- commit SHA;
+- pull-request URL, if created;
+- final clean/dirty status of every repository touched.
 
 Do not call work complete if required checks failed unless clearly reporting the failure and the remaining blocker.
