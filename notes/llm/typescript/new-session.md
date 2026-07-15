@@ -10,7 +10,7 @@ Before doing implementation work, read the current source-of-truth materials for
 - latest relevant session logs or roadmap notes;
 - current app repository state and git status.
 
-Use the project’s canonical source locations. If a file is unavailable, inaccessible, or ambiguous, stop and ask for the missing source instead of guessing.
+Use the project’s canonical source locations. If a file is unavailable, inaccessible, or ambiguous, determine whether it materially affects the current task. If it does, stop and ask for the missing source instead of guessing. Otherwise, continue with the available canonical sources and clearly state the gap.
 
 Do not use stale browser copies, unrelated local checkouts, old repositories, copied code from previous apps, or memory from another project unless explicitly authorized in this session.
 
@@ -30,7 +30,9 @@ Use only:
 - the current project source-of-truth docs;
 - the current private memory repo, if present;
 - current session instructions;
-- files, screenshots, credentials, and prompts explicitly provided in this session.
+- files, screenshots, and prompts explicitly provided in this session.
+
+Use credentials only through the project’s approved environment or secret-management mechanism. Never ask the user to paste credentials into chat, source files, logs, docs, or memory. If credentials are supplied, do not reproduce or persist them.
 
 Do not inspect, inherit, reuse, or copy old implementation files, route names, schemas, component names, state shapes, Tailwind class strings, or file structure from older apps unless explicitly authorized.
 
@@ -38,9 +40,9 @@ If provided references are visual only, translate them into a short implementati
 
 # First Response
 
-The first response must not include code changes, file edits, dependency installation, scaffolding, route creation, or implementation unless the user explicitly asks for implementation.
+Read the required context before responding. The first response must not include code changes, file edits, dependency installation, scaffolding, route creation, or implementation unless the user explicitly asks for implementation.
 
-First:
+If the first message is an orientation/handoff request or does not specify a concrete task, first:
 
 1. Summarize the current product brief.
 2. Summarize the UI/UX contract, if available.
@@ -48,6 +50,8 @@ First:
 4. Summarize current private memory or roadmap state, if available.
 5. Identify remaining decisions or blockers for the next task.
 6. Restate the guardrails that apply to the current task.
+
+If the first message specifies a concrete task, summarize only the current state, blockers, and guardrails relevant to that task before acting. Do not require a full project recap when it does not help with the request.
 
 If the first user message is diagnostic, investigate and answer only. Do not mutate code, config, services, or data unless explicitly asked.
 
@@ -62,6 +66,8 @@ Before editing:
 - keep public app commits and private memory commits separate;
 - use the project’s approved Git identity for commits;
 - never commit as an assistant, bot, automation, model, or placeholder identity.
+
+Authorization to edit or implement does not imply authorization to commit, push, merge, deploy, release, publish packages, send communications, create external records, or mutate production data. Require an explicit request for each applicable external action.
 
 Before relying on branch state, fetch the relevant remote refs when access is available. Do not pull, merge, rebase, switch branches, or discard changes unless the task requires it or the user explicitly authorizes it.
 
@@ -86,6 +92,7 @@ Prefer the project’s existing structure and patterns.
 - Avoid one-off provider checks in core UI or feature code.
 - Treat files over roughly 300 handwritten lines as split candidates.
 - Treat files over roughly 500 handwritten lines as architecture smells unless generated, static data, migrations, or explicitly exempted.
+- Use cohesion, responsibility, and complexity as the primary reasons to split files. Line-count thresholds are review signals, not automatic requirements.
 - Add short role/intent comments for non-trivial boundaries, adapters, security-sensitive code, or non-obvious branches.
 - When adding a capability, update all affected layers coherently: contract/types, implementation, UI handling, tests, and docs.
 
@@ -96,13 +103,11 @@ Use the existing approved UI system and primitives.
 - Use shared primitives for buttons, dropdowns, tooltips, tabs, menus, tables, forms, and recurring behavior.
 - Match the current app’s visual rhythm: spacing, typography, colors, radius, shadows, density, and interaction states.
 - Use the project’s chosen icon library consistently.
-- Use Tailwind utilities unless the project explicitly permits another styling approach.
-- Do not create custom CSS classes unless the project’s UI system allows them.
+- Use the project’s established styling approach. If Tailwind is already established, prefer its utilities and conventions; do not introduce another styling system without approval.
+- Do not create custom CSS classes unless the project’s existing UI system allows them.
 - Preserve independent lightweight UI state across view/mode/context switches unless a real context change requires reset.
 - Include loading, empty, error, disabled, permission, and focus states for real workflows.
-- Do not run Playwright, browser automation, or end-to-end browser tools unless the user explicitly requests them for the current task.
-- Do not capture browser screenshots unless the user explicitly requests them.
-- For UI work, rely on focused component tests and static checks by default. Clearly report when visual/browser verification was not performed.
+- Follow the explicit opt-in browser-verification policy below. For UI work, rely on focused component tests and static checks by default and clearly report when visual/browser verification was not performed.
 
 # Data, Provider, And Security Guardrails
 
@@ -162,6 +167,8 @@ Before reporting completion, state:
 - largest handwritten files when the change is broad;
 - known risks or checks that could not be run;
 - working-tree status when relevant.
+
+Do not fix unrelated failures or expand scope merely because verification discovered them. Report them separately unless they block the requested work.
 
 If commits, pushes, or pull requests were part of the task, also state:
 
