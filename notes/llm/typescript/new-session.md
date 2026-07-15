@@ -100,6 +100,7 @@ Prefer the project’s existing structure and patterns.
 
 Use the existing approved UI system and primitives.
 
+- Treat the current app’s local UI contract, component-pattern docs, and implemented primitives as canonical. Reusable public pattern files are bootstrap references, not remote overrides.
 - Use shared primitives for buttons, dropdowns, tooltips, tabs, menus, tables, forms, and recurring behavior.
 - Match the current app’s visual rhythm: spacing, typography, colors, radius, shadows, density, and interaction states.
 - Use the project’s chosen icon library consistently.
