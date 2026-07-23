@@ -31,7 +31,7 @@ Run privileged commands as the server administrator. Run user-scoped commands fr
 If the user does not already exist, create it with a home directory and a normal login shell:
 
 ```bash
-sudo useradd -m <user>
+useradd -m <user>
 ```
 
 Optionally, change the user's shell to `/bin/bash`:
