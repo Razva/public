@@ -80,7 +80,7 @@ Install baseline TypeScript tooling, debugging utilities, Postgres client utilit
 
 ```bash
 sudo apt update
-sudo apt install -y \
+sudo apt install \
   git gh ripgrep jq curl iproute2 systemd login \
   ca-certificates openssl \
   procps lsof smem bsdextrautils \
@@ -135,13 +135,13 @@ NODE_VERSION="<version>"
 NODE_MAJOR="<major>"
 NODE_ARCH="x64"
 
-sudo mkdir -p /opt/node
-sudo tar -xJf "node-v${NODE_VERSION}-linux-${NODE_ARCH}.tar.xz" -C /opt/node
-sudo mv "/opt/node/node-v${NODE_VERSION}-linux-${NODE_ARCH}" "/opt/node/node${NODE_MAJOR}-${NODE_VERSION}"
-sudo ln -sfn "/opt/node/node${NODE_MAJOR}-${NODE_VERSION}" "/opt/node/node${NODE_MAJOR}"
-sudo ln -sfn "/opt/node/node${NODE_MAJOR}/bin/node" /usr/local/bin/node
-sudo ln -sfn "/opt/node/node${NODE_MAJOR}/bin/npm" /usr/local/bin/npm
-sudo ln -sfn "/opt/node/node${NODE_MAJOR}/bin/npx" /usr/local/bin/npx
+sudo mkdir -p /opt/node &&
+sudo tar -xJf "node-v${NODE_VERSION}-linux-${NODE_ARCH}.tar.xz" -C /opt/node &&
+sudo mv "/opt/node/node-v${NODE_VERSION}-linux-${NODE_ARCH}" "/opt/node/node${NODE_MAJOR}-${NODE_VERSION}" &&
+sudo ln -sfn "/opt/node/node${NODE_MAJOR}-${NODE_VERSION}" "/opt/node/node${NODE_MAJOR}" &&
+sudo ln -sfn "/opt/node/node${NODE_MAJOR}/bin/node" /usr/local/bin/node &&
+sudo ln -sfn "/opt/node/node${NODE_MAJOR}/bin/npm" /usr/local/bin/npm &&
+sudo ln -sfn "/opt/node/node${NODE_MAJOR}/bin/npx" /usr/local/bin/npx &&
 sudo ln -sfn "/opt/node/node${NODE_MAJOR}/bin/corepack" /usr/local/bin/corepack
 ```
 
@@ -154,8 +154,8 @@ Keep `/opt/node`, `/usr/local`, and the system Node prefix owned by root. Never 
 Configure global developer tools from the project user’s normal login shell. Do not run these commands as root or through `sudo -u`.
 
 ```bash
-mkdir -p "$HOME/.local/share/npm"
-npm config set prefix "$HOME/.local/share/npm"
+mkdir -p "$HOME/.local/share/npm" &&
+npm config set prefix "$HOME/.local/share/npm" &&
 npm config get prefix
 ```
 
@@ -169,9 +169,9 @@ grep -qxF 'export PATH="$HOME/.local/share/npm/bin:$PATH"' "$HOME/.profile" || \
 Start a new login shell, then verify:
 
 ```bash
-command -v node
-command -v npm
-command -v npx
+command -v node &&
+command -v npm &&
+command -v npx &&
 npm config get prefix
 ```
 
@@ -194,8 +194,8 @@ Do not configure a placeholder, assistant, model, or automation Git identity. Ap
 Install Codex as the project user after the per-user npm prefix is configured:
 
 ```bash
-npm install -g @openai/codex
-command -v codex
+npm install -g @openai/codex &&
+command -v codex &&
 codex --version
 ```
 
@@ -223,9 +223,23 @@ Use the broader profile only when the user explicitly accepts the boundary, and 
 
 Use `/plugins` in Codex CLI or the current Codex plugin settings UI to browse, install, and enable approved plugins. Do not copy plugin-enable TOML from an older setup. Installing Codex Security or another scanner does not authorize running scans; scan execution remains explicitly task-authorized.
 
-## Optional Browser Capability
+## Optional Browser Capability (Playwright)
 
-The baseline packages provide common Chromium OS libraries. Do not run `npm install playwright` in this server setup; project dependencies and managed browser installation belong to app bootstrap and only when browser automation is explicitly selected for that app.
+Change into the parent folder of your project directory (e.g.: `/home/<user>/<project-workdir>`) and install  `playwright`:
+
+```bash
+npm install --save-dev --save-exact @playwright/test@latest &&
+npx playwright install chromium &&
+npx playwright --version
+```
+
+If Chromium reports missing Linux libraries, install the required dependencies:
+
+```bash
+sudo npx playwright install-deps chromium
+```
+
+Then retry install again as `<user>`.
 
 ## Optional User-Level systemd Capability
 
