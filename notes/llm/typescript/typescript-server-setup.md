@@ -59,7 +59,7 @@ On the server, prepare the project user’s authorized-keys file:
 mkdir -p ~/.ssh &&
 touch ~/.ssh/authorized_keys &&
 chmod 700 ~/.ssh &&
-chmod 600 ~/.ssh/authorized_keys &&
+chmod 600 ~/.ssh/authorized_keys
 ```
 
 Append the public key to `~/.ssh/authorized_keys`, then test a fresh SSH login before continuing.
