@@ -28,7 +28,7 @@ Run privileged commands as the server administrator. Run user-scoped commands fr
 
 ## Project User
 
-If the user does not already exist, create it with a home directory and a normal login shell:
+If the user does not already exist, as `root` or sudoer, create it with a home directory and a normal login shell:
 
 ```bash
 useradd -m <user>
@@ -53,7 +53,7 @@ cat ~/.ssh/key_name.pub
 
 Never print or copy `~/.ssh/key_name`; that is the private key.
 
-On the server, prepare the project user’s authorized-keys file:
+On the server, login as `<user>` and prepare the project user’s authorized-keys file:
 
 ```bash
 mkdir -p ~/.ssh &&
