@@ -31,9 +31,13 @@ Run privileged commands as the server administrator. Run user-scoped commands fr
 If the user does not already exist, create it with a home directory and a normal login shell:
 
 ```bash
-sudo adduser <user>
-id <user>
-getent passwd <user>
+sudo useradd -m <user>
+```
+
+Optionally, change the user's shell to `/bin/bash`:
+
+```bash
+chsh <user>
 ```
 
 Keep each app checkout and its private environment owned by the project user that runs it.
@@ -52,10 +56,10 @@ Never print or copy `~/.ssh/key_name`; that is the private key.
 On the server, prepare the project user’s authorized-keys file:
 
 ```bash
-mkdir -p ~/.ssh
-touch ~/.ssh/authorized_keys
-chmod 700 ~/.ssh
-chmod 600 ~/.ssh/authorized_keys
+mkdir -p ~/.ssh &&
+touch ~/.ssh/authorized_keys &&
+chmod 700 ~/.ssh &&
+chmod 600 ~/.ssh/authorized_keys &&
 ```
 
 Append the public key to `~/.ssh/authorized_keys`, then test a fresh SSH login before continuing.
