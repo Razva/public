@@ -4,6 +4,8 @@ Use this file at the beginning of every later conversation for the same project.
 
 This file is a loader and router. It contains no substitute for the global foundation or the project's canonical sources.
 
+The optional [session-closeout workflow](3-vibe-coding-session-closeout.md) may have prepared a final checkpoint, but continuation must not depend on it. If closeout was skipped or interrupted, detect stale or incomplete state through the foundation's startup protocol and reconstruct only from verified repository evidence.
+
 Do not use this file inside the original conversation in which bootstrap is still running or has just been approved. That conversation already has the required context and may continue directly.
 
 ## 1. Load The Canonical Foundation

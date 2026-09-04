@@ -12,11 +12,12 @@ Do not implement the first functional product slice through this workflow.
 
 Read the complete foundation before starting. Apply it throughout bootstrap without copying or paraphrasing its rules into this file.
 
-Keep the three reusable workflows distinct:
+Keep the four reusable workflow roles distinct:
 
 - the foundation owns rules that remain applicable throughout the project;
 - this bootstrap owns one-time discovery, project-specific selection, initial setup, and bootstrap handoff;
-- the separate continuation workflow owns orientation and task startup only at the beginning of a later conversation for an established project.
+- the optional session-closeout workflow owns final persistence and authorized publication before deliberately leaving a conversation;
+- the continuation workflow owns orientation, lifecycle routing, and task startup only at the beginning of a later conversation for the same project.
 
 When the foundation already decides a policy, collect only the concrete project value needed to apply it. For example, collect the two repositories' names and paths without asking whether the required two-repository model should be used.
 
@@ -287,4 +288,4 @@ Before requesting approval, update the decision record with the final classifica
 
 Ask the owner to approve the bootstrap result. On approval, update the decision record to approval status `Approved` and retirement status `Retired`; update current context to leave bootstrap and point to the first permitted functional slice; and record the chronological approval checkpoint in the current daily log using the same bootstrap identifier. Never supply or apply this bootstrap again for the project.
 
-The current conversation may proceed directly with the foundation and canonical project sources. At the beginning of a later conversation, supply only the separate continuation workflow and the current request; that workflow retrieves the foundation. Never supply this bootstrap again.
+The current conversation may proceed directly with the foundation and canonical project sources. Before deliberately leaving it, the owner may supply the optional [session-closeout workflow](3-vibe-coding-session-closeout.md). At the beginning of a later conversation, supply only the [continuation workflow](4-vibe-coding-continuation.md) and the current request; that workflow retrieves the foundation. Never supply this bootstrap again.
