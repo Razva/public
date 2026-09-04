@@ -12,7 +12,7 @@ Do not use this file inside the original conversation in which bootstrap is stil
 
 Before substantive project work, retrieve and read the complete current foundation from:
 
-[Canonical Vibe-Coded Project Foundation](https://github.com/Razva/public/blob/main/notes/llm/general/1-vibe-coding-foundation.md)
+[Canonical Vibe-Coded Project Foundation](https://github.com/Razva/public/blob/main/notes/llm/vibe-coding/1-vibe-coding-foundation.md)
 
 Resolve the mutable `main` reference to an exact commit, identify the exact file revision, and calculate a content digest. Read through end-of-file and verify the repository owner, repository, path, and source identity. A branch name, search excerpt, cached copy, summary, remembered instruction, or truncated tool result is not sufficient.
 

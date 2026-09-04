@@ -8,7 +8,7 @@ Supply this complete file, from its title through its final sentence. An excerpt
 
 ## 1. Verify The Closeout Authority And Foundation Baseline
 
-The canonical copy of this workflow is [Vibe-Coded Project Session Closeout](https://github.com/Razva/public/blob/main/notes/llm/general/3-vibe-coding-session-closeout.md).
+The canonical copy of this workflow is [Vibe-Coded Project Session Closeout](https://github.com/Razva/public/blob/main/notes/llm/vibe-coding/3-vibe-coding-session-closeout.md).
 
 Before relying on the special authorization in this file, apply the foundation's **Tool Result Completeness** requirements to the canonical source. Resolve the complete supplied content to an exact Git revision and content digest, verify its owner, repository, path, and end-of-file, and retain those identifiers for the closeout record and response.
 
@@ -31,7 +31,7 @@ Supplying this workflow explicitly authorizes the agent to perform the repositor
 - update affected canonical application documentation and private memory where their repositories exist at the current lifecycle stage;
 - create and finalize the task-scoped local commits or provisional checkpoints required by the foundation for eligible current work, and execute its ordered publication sequence to the repositories' already-configured remotes and current authorized branches.
 
-This authorization does not extend to unrelated changes, a different branch or remote, history rewriting, destructive cleanup, pull-request creation or merge, release, deployment, production mutation, external communication, or any other separately controlled action. The foundation's preservation rules remain unchanged. If the authorized target or change boundary is uncertain, stop the affected mutation and report the exact ambiguity.
+This authorization does not extend to unrelated changes, a different branch or remote, rewriting published history, performing a history rewrite not expressly required by the foundation's ordered publication sequence, destructive cleanup, pull-request creation or merge, release, deployment, production mutation, external communication, or any other separately controlled action. The foundation's preservation rules remain unchanged. If the authorized target or change boundary is uncertain, stop the affected mutation and report the exact ambiguity.
 
 ## 4. Establish The True Stopping State
 
@@ -49,7 +49,7 @@ Update `.agents/current-context.md` under the foundation's existing schema so it
 
 Record this closeout workflow's canonical identity, exact revision, and content digest in the current daily session log. Do not turn it into a durable project decision or a routing field in current context.
 
-Run the applicable foundation verification and publication gates, then use the authorization above to execute the foundation's ordered publication sequence for every eligible existing repository. If any relevant change cannot be verified, committed, or pushed safely, leave it intact, describe its exact state and location in current context, and publish the remaining truthful checkpoint only when doing so does not misrepresent or lose that state.
+Run the foundation checks that precede publication, then use the authorization above to execute its complete ordered publication sequence for every eligible existing repository, including the GitHub checks and memory-checkpoint finalization that occur within that sequence. If any relevant change cannot be verified, committed, or pushed safely, leave it intact, describe its exact state and location in current context, and publish the remaining truthful checkpoint only when doing so does not misrepresent or lose that state.
 
 Complete the foundation's post-publication confirmation for every repository included in the closeout. For each project repository not included, record why it is not yet created, not applicable to the current stage, or not safely publishable. Treat every unexplained local or remote difference as an explicit closeout exception.
 

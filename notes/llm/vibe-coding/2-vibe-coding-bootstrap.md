@@ -1,8 +1,8 @@
 # Vibe-Coded Project Bootstrap
 
-Supply the [Vibe-Coded Project Foundation](https://github.com/Razva/public/blob/main/notes/llm/general/1-vibe-coding-foundation.md) first. Then supply this workflow exactly once for the project to establish a new application or complete an appropriate partial bootstrap. Keep bootstrap as the active project phase until the owner approves and retires it.
+Supply the [Vibe-Coded Project Foundation](https://github.com/Razva/public/blob/main/notes/llm/vibe-coding/1-vibe-coding-foundation.md) first. Then supply this workflow exactly once for the project to establish a new application or complete an appropriate partial bootstrap. Keep bootstrap as the active project phase until the owner approves and retires it.
 
-The canonical copy of this workflow is [Vibe-Coded Project Bootstrap](https://github.com/Razva/public/blob/main/notes/llm/general/2-vibe-coding-bootstrap.md). Resolve both supplied companion files to their exact Git revisions, calculate their content digests, and verify their canonical identities and complete contents before recording the bootstrap lifecycle.
+The canonical copy of this workflow is [Vibe-Coded Project Bootstrap](https://github.com/Razva/public/blob/main/notes/llm/vibe-coding/2-vibe-coding-bootstrap.md). Resolve both supplied companion files to their exact Git revisions, calculate their content digests, and verify their canonical identities and complete contents before recording the bootstrap lifecycle.
 
 The foundation defines the permanent operating rules. This file collects project-specific facts, guides initial decisions, creates the approved non-product scaffold, verifies it, and hands the resulting project to normal development.
 
