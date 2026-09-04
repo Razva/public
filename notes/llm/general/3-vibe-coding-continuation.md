@@ -12,17 +12,17 @@ Before substantive project work, retrieve and read the complete current foundati
 
 [Canonical Vibe-Coded Project Foundation](https://github.com/Razva/public/blob/main/notes/llm/general/1-vibe-coding-foundation.md)
 
-Resolve the mutable `main` reference to an exact commit and identify the exact file revision or calculate a content digest. Read through end-of-file and verify the repository owner, repository, path, and source identity. A branch name, search excerpt, cached copy, summary, remembered instruction, or truncated tool result is not sufficient.
+Resolve the mutable `main` reference to an exact commit, identify the exact file revision, and calculate a content digest. Read through end-of-file and verify the repository owner, repository, path, and source identity. A branch name, search excerpt, cached copy, summary, remembered instruction, or truncated tool result is not sufficient.
 
-If the complete foundation cannot be retrieved or its canonical identity and revision or digest cannot be established, stop. State the precise access or completeness problem and ask the user to provide the complete foundation. Do not continue from memory or embedded excerpts.
+If the complete foundation cannot be retrieved or its canonical identity, exact revision, and content digest cannot be established, stop. State the precise access or completeness problem and ask the user to provide the complete foundation. Do not continue from memory or embedded excerpts.
 
-Do not copy the foundation into this file, project documentation, or private memory. Store only its source identity and revision or digest where this workflow requires a reference.
+Do not copy the foundation into this file, project documentation, or private memory. Store only its source identity, exact revision, and content digest where this workflow requires a reference.
 
 ## 2. Reconcile The Foundation Revision
 
-During project orientation, read the foundation source identity and revision or digest previously recorded in `.agents/current-context.md`.
+During project orientation, read the foundation source identity, exact Git revision, and content digest previously recorded in `.agents/current-context.md`.
 
-If no prior value exists, treat the current verified value as the project's continuation baseline. Do not infer which earlier foundation version was used.
+If no prior value exists, do not establish a baseline until evaluating the bootstrap lifecycle in Section 4. Treat an active bootstrap created under the current bootstrap contract as incomplete; for an older project with no applicable bootstrap record, use the current verified foundation revision and digest as the continuation baseline and disclose that no earlier comparison was possible.
 
 If the value changed:
 
@@ -32,9 +32,9 @@ If the value changed:
 4. continue unaffected work only when the conflict does not govern it;
 5. surface consequential conflicts for owner resolution instead of silently rewriting project contracts.
 
-Record the exact foundation revision or digest used for the session in `current-context.md` as part of the session's first otherwise-required memory update. When the revision changed, record the comparison outcome in the current daily session log and link to any resulting project decision without copying either source.
+Record the exact foundation revision and content digest used for the session in `current-context.md` as part of the session's first otherwise-required memory update. When the revision changed, record the comparison outcome in the current daily session log and link to any resulting project decision without copying either source.
 
-For a purely read-only request that does not otherwise justify a memory update, state the verified foundation revision or digest in the response but do not mutate memory solely to record the read.
+For a purely read-only request that does not otherwise justify a memory update, state the verified foundation revision and content digest in the response but do not mutate memory solely to record the read.
 
 If a relevant revision change cannot be compared reliably, fail closed for work it may affect. State what could not be verified and what evidence is needed.
 
@@ -44,7 +44,7 @@ Execute the complete **Source-Of-Truth Startup Protocol** and **Tool Result Comp
 
 Use the canonical application and private-memory repository identities and locations recorded by the project. Complete that protocol before relying on a path, branch, plan, decision, preference, current state, or claimed absence.
 
-Do not retrieve, request, or reapply the bootstrap file. Bootstrap continuation is routed only from its durable project state.
+Do not ask the user to supply the bootstrap file again. Whether its exact recorded revision may be retrieved is determined only by the lifecycle route below.
 
 ## 4. Evaluate The Bootstrap Lifecycle
 
@@ -52,12 +52,14 @@ Find the stable bootstrap identifier and lifecycle fields in `.agents/decisions.
 
 Evaluate the fields together:
 
-- **Retirement status `Active`** — bootstrap remains in progress. Resume the current stage from `current-context.md` using the approved proposal, recorded decisions, canonical project sources, and next action. Do not begin functional product work that the unfinished bootstrap has not permitted.
+- **Retirement status `Active`** — bootstrap remains in progress. Read its canonical source identity, exact Git revision, and content digest from the lifecycle decision. Retrieve that exact revision—not the current branch version—verify its identity and digest, and read it through end-of-file. Then resume the stage and next action from `current-context.md`: if no proposal is approved, continue discovery or proposal preparation; if a proposal is approved, continue the recorded post-approval bootstrap stage. Do not begin functional product work that the unfinished bootstrap has not permitted.
 - **Approval status `Approved` and retirement status `Retired`** — bootstrap completed normally. Route to ordinary project continuation.
 - **Applicability `Not applicable` and retirement status `Retired without execution`** — bootstrap classified an already-established project. Route to ordinary continuation without implying that bootstrap created or approved the existing foundation.
 - **Missing, incompatible, or contradictory fields** — investigate the lifecycle record, its links, repository evidence, and relevant history. Do not assume approval, retirement, applicability, or permission to proceed.
 
 Examples of contradictions include approval `Approved` with retirement `Active`, applicability `Not applicable` with a normal completed-bootstrap claim, or an active lifecycle decision without the linked stage and next action.
+
+Never retrieve or apply the bootstrap file when its retirement status is `Retired` or `Retired without execution`. If an active record lacks an exact retrievable revision, its content digest, or enough source identity to establish the canonical file, fail closed rather than substituting the latest bootstrap version or a remembered copy.
 
 If the lifecycle route cannot be established confidently, fail closed for mutating work. Report the exact inconsistency and request only the information needed to resolve it.
 
@@ -76,7 +78,7 @@ Do not require the owner to repeat accepted identity, product, technology, or wo
 Before acting, provide a concise orientation containing only:
 
 - the lifecycle route selected;
-- the exact foundation revision or digest loaded;
+- the exact foundation revision and content digest loaded;
 - the current state, constraints, blockers, and next action relevant to the request;
 - any foundation-revision conflict or source gap that affects the request.
 

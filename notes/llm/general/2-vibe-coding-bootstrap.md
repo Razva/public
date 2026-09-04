@@ -1,6 +1,8 @@
 # Vibe-Coded Project Bootstrap
 
-Supply the [Vibe-Coded Project Foundation](1-vibe-coding-foundation.md) first. Then supply this workflow exactly once for the project to establish a new application or complete an appropriate partial bootstrap. Keep bootstrap as the active project phase until the owner approves and retires it.
+Supply the [Vibe-Coded Project Foundation](https://github.com/Razva/public/blob/main/notes/llm/general/1-vibe-coding-foundation.md) first. Then supply this workflow exactly once for the project to establish a new application or complete an appropriate partial bootstrap. Keep bootstrap as the active project phase until the owner approves and retires it.
+
+The canonical copy of this workflow is [Vibe-Coded Project Bootstrap](https://github.com/Razva/public/blob/main/notes/llm/general/2-vibe-coding-bootstrap.md). Resolve both supplied companion files to their exact Git revisions, calculate their content digests, and verify their canonical identities and complete contents before recording the bootstrap lifecycle.
 
 The foundation defines the permanent operating rules. This file collects project-specific facts, guides initial decisions, creates the approved non-product scaffold, verifies it, and hands the resulting project to normal development.
 
@@ -43,17 +45,17 @@ This workflow does not own:
 - routine startup for an established project;
 - ongoing session orientation, recovery, or resumption.
 
-Bootstrap remains active until the owner approves its outcome. Do not supply this file again, including when bootstrap spans conversations.
+Bootstrap remains active until the owner approves its outcome. The user supplies this file only once, including when bootstrap spans conversations. A later continuation workflow may retrieve and apply the exact recorded revision while bootstrap remains active; after retirement, this file must never be retrieved or applied for the project.
 
 After project identity and the private memory location are accepted, create one durable bootstrap lifecycle record as soon as that memory repository is available and the owner has authorized the required memory mutation. Give it one stable bootstrap identifier and divide ownership as follows:
 
-- `.agents/decisions.md` records the bootstrap identifier, source identity and revision or digest, starting-state classification, applicability, approved proposal reference, approval status, and retirement status.
-- `.agents/current-context.md` links to that identifier and records the current bootstrap stage, unresolved questions, blockers, and next action.
+- `.agents/decisions.md` records the bootstrap identifier; this file's canonical source identity, exact retrievable Git revision, and content digest; starting-state classification; applicability; approved proposal reference; approval status; and retirement status.
+- `.agents/current-context.md` links to that identifier and records the foundation's canonical source identity, exact Git revision, and content digest used during bootstrap, followed by the current bootstrap stage, unresolved questions, blockers, and next action.
 - the current daily session log references that identifier for meaningful chronological checkpoints under the foundation's logging rules.
 
 Link to approved project decisions and evidence in their canonical locations. Do not copy their contents into the lifecycle record or duplicate lifecycle fields across memory files.
 
-If a later conversation begins before bootstrap approval, the continuation workflow must detect the active lifecycle decision and linked current context, then resume from the recorded stage without receiving this file again. If no durable record exists, reconstruct only from accessible project or conversation evidence and ask for missing facts; never invent prior approval or silently repeat completed work.
+If a later conversation begins before bootstrap approval, the continuation workflow must detect the active lifecycle decision, retrieve this file at its exact recorded revision, verify its digest and complete contents, and resume from the linked current context without asking the user to supply this file again. If no durable record exists, reconstruct only from accessible project or conversation evidence and ask for missing facts; never invent prior approval or silently repeat completed work.
 
 Approval retires bootstrap, not the conversation. The same conversation may then continue using the foundation and canonical project sources; do not activate the continuation workflow in that conversation. Supply the continuation workflow only at the beginning of a later conversation. Once bootstrap is approved and retired, never supply or apply it again for that project.
 
@@ -91,7 +93,7 @@ Use this workflow for a partial bootstrap only after identifying what is authori
 
 If the project is already established, do not force it back through bootstrap or require a new conversation. Explain the classification, stop applying bootstrap, and continue in the same conversation using the foundation and canonical project sources. Reserve the continuation workflow for a later conversation.
 
-When durable private memory exists, record this early-exit outcome in the decision record: classification `Established project`, applicability `Not applicable`, the bootstrap source revision or digest, a link to the supporting classification evidence, and retirement status `Retired without execution`. Update current context with the next non-bootstrap action and a link to that decision. If durable memory is unavailable, report that limitation rather than claiming a persistent retirement record.
+When durable private memory exists, record this early-exit outcome in the decision record: classification `Established project`, applicability `Not applicable`, this file's canonical source identity, exact Git revision and content digest, a link to the supporting classification evidence, and retirement status `Retired without execution`. Update current context with the foundation's canonical source identity, exact Git revision and content digest, the next non-bootstrap action, and a link to that decision. If durable memory is unavailable, report that limitation rather than claiming a persistent retirement record.
 
 For a replacement or clean-room project, ask the owner to classify prior materials as requirements, visual references, migration inputs, historical evidence, or authorized implementation sources before inspecting or using them. Inventory supplied code, content, datasets, fonts, icons, screenshots, designs, and other assets, then collect the project-specific provenance, permission, attribution, and publication facts required by the foundation's source-and-asset-rights rules.
 
@@ -279,10 +281,10 @@ Do not add product behavior merely to satisfy an inapplicable generated check. C
 
 ## 16. Handoff And Retire Bootstrap
 
-Apply the foundation's completion, memory, Git, publication, and handoff rules. Add only the bootstrap-specific handoff facts: the approved proposal, deviations from it, scaffold acceptance result, first permitted functional slice, unresolved bootstrap blockers, and the identity and revision or digest of this bootstrap source.
+Apply the foundation's completion, memory, Git, publication, and handoff rules. Add only the bootstrap-specific handoff facts: the approved proposal, deviations from it, scaffold acceptance result, first permitted functional slice, unresolved bootstrap blockers, and this file's canonical source identity, exact Git revision, and content digest. Preserve the foundation source identity, exact revision, and content digest already recorded in current context.
 
 Before requesting approval, update the decision record with the final classification, applicability, approved proposal reference, approval status `Awaiting approval`, and retirement status `Active`. Update linked current context with stage `Awaiting bootstrap approval`, unresolved blockers, the next action, and links to scaffold completion evidence and the first permitted functional slice. Do not place those current workflow fields in `decisions.md`. If durable private memory remains unavailable, disclose that bootstrap cannot be durably approved and retired.
 
 Ask the owner to approve the bootstrap result. On approval, update the decision record to approval status `Approved` and retirement status `Retired`; update current context to leave bootstrap and point to the first permitted functional slice; and record the chronological approval checkpoint in the current daily log using the same bootstrap identifier. Never supply or apply this bootstrap again for the project.
 
-The current conversation may proceed directly with the foundation and canonical project sources. At the beginning of a later conversation, supply the foundation and the separate continuation workflow—not this bootstrap.
+The current conversation may proceed directly with the foundation and canonical project sources. At the beginning of a later conversation, supply only the separate continuation workflow and the current request; that workflow retrieves the foundation. Never supply this bootstrap again.
