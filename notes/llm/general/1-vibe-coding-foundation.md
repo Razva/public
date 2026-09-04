@@ -657,7 +657,7 @@ Make background work and integrations observable without exposing content. Recor
 
 ### Telemetry And Diagnostic Data
 
-The minimum first-party operational logs, audit records, health signals, and aggregate service metrics required by this foundation are baseline observability, not optional telemetry. Keep them within the approved project environment unless an external destination is explicitly adopted, and apply the existing privacy and data-minimization rules.
+The required first-party operational logs, health signals, and aggregate service metrics are baseline observability. Required audit records remain separate product-accountability data. Neither baseline observability nor required audit records is optional product telemetry. Keep them within the approved project environment unless an external destination is explicitly adopted, and apply their respective purpose, access, retention, privacy, and data-minimization rules.
 
 Treat product analytics, behavioral tracking, error or crash reporting to an external service, performance-trace export, heatmaps, and session replay as optional telemetry. Keep optional telemetry and external diagnostic export disabled unless the project explicitly adopts them. A framework, hosting platform, SDK, scaffold, or provider default does not constitute approval.
 
@@ -676,7 +676,7 @@ Collect the minimum data needed for the approved purpose. Do not send credential
 
 Session replay, keystroke capture, broad DOM capture, and request or response capture require explicit project approval. Disable them on sensitive surfaces and fields, verify masking against rendered output, and prefer aggregate events when they answer the same question.
 
-Sending baseline operational data to an external provider is an external diagnostic export and requires explicit project adoption. Do not let third-party telemetry bypass authorization, privacy, content-security, data-residency, configuration, testing, or publication boundaries. Keep development and test activity out of production analytics unless the project explicitly defines safe separation.
+Sending baseline observability or audit data to an external provider is a separate external-data decision and requires explicit project adoption. Do not let third-party telemetry bypass authorization, privacy, content-security, data-residency, configuration, testing, or publication boundaries. Keep development and test activity out of production analytics unless the project explicitly defines safe separation.
 
 ## 23. UI And Design-System Foundation
 
