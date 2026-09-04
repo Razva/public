@@ -596,6 +596,16 @@ When dependencies change:
 
 Upgrade one meaningful dependency layer at a time when practical. Automated dependency proposals are review inputs; they must not merge, publish, or deploy automatically.
 
+### Source And Asset Rights
+
+Before using, modifying, committing, or publishing supplied, discovered, or generated material, verify its provenance and the project's right to use it. Public availability, repository access, search visibility, or delivery by the owner does not by itself establish permission.
+
+Apply this check to source code, snippets, templates, text, datasets, fonts, icons, images, screenshots, audio, video, design files, models, generated artifacts, and other third-party material.
+
+Determine the applicable license or permission, allowed uses, modification and redistribution terms, attribution and notice requirements, privacy or likeness restrictions, trademark constraints, and compatibility with the project's intended license and distribution. Preserve required notices, license files, attribution, provenance, and source references in durable project records.
+
+If material rights are missing, ambiguous, incompatible, or unverifiable, do not incorporate or publish the material. Obtain permission or replace it with material whose rights are clear.
+
 ## 21. Security And Privacy Foundation
 
 Define protected information, trust boundaries, actors, permissions, retention, and external data flows before implementing sensitive workflows.
@@ -642,6 +652,29 @@ Redact structured context recursively and sanitize errors before displaying them
 Audit consequential business actions with the acting identity, time, action, target, and the minimum before/after facts needed for accountability. Construct audit payloads through action-specific allowlists. Never copy a request, model, external payload, or exception wholesale into an append-only audit record.
 
 Make background work and integrations observable without exposing content. Record bounded phase timings, success/failure categories, retry state, and correlation identifiers.
+
+### Telemetry And Diagnostic Data
+
+Treat product analytics, error reporting, performance monitoring, crash reporting, heatmaps, and session replay as deliberate data-collection features, not harmless tooling defaults.
+
+Keep telemetry disabled unless the project explicitly adopts it. A framework, hosting platform, SDK, scaffold, or provider default does not constitute approval.
+
+Before enabling telemetry, define and document:
+
+- its specific purpose and necessary events;
+- collected fields and prohibited fields;
+- consent or other approved basis when required;
+- environments, users, and surfaces covered;
+- internal access and external recipients;
+- provider, data location, and transfer boundaries;
+- retention, deletion, export, and user-control behavior;
+- behavior when consent is absent or the telemetry provider is unavailable.
+
+Collect the minimum data needed for the approved purpose. Do not send credentials, private content, raw form values, message bodies, unrestricted URLs, or sensitive identifiers merely because a telemetry SDK can capture them. Pseudonymous identifiers and hashes may still be sensitive and must remain scoped, protected, and retained deliberately.
+
+Session replay, keystroke capture, broad DOM capture, and request or response capture require explicit project approval. Disable them on sensitive surfaces and fields, verify masking against rendered output, and prefer aggregate events when they answer the same question.
+
+Do not let third-party telemetry bypass authorization, privacy, content-security, data-residency, configuration, testing, or publication boundaries. Keep development and test activity out of production analytics unless the project explicitly defines safe separation.
 
 ## 23. UI And Design-System Foundation
 

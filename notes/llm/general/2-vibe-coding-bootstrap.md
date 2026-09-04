@@ -1,6 +1,6 @@
 # Vibe-Coded Project Bootstrap
 
-Use this workflow once to establish a new application project or complete an appropriate partial bootstrap. Use it together with [Vibe-Coded Project Foundation](1-vibe-coding-foundation.md), which must be available to the same LLM coding agent.
+Supply the [Vibe-Coded Project Foundation](1-vibe-coding-foundation.md) first. Then supply this workflow once to establish a new application project or complete an appropriate partial bootstrap. Keep it active until the owner approves and retires the bootstrap.
 
 The foundation defines the permanent operating rules. This file collects project-specific facts, guides initial decisions, creates the approved non-product scaffold, verifies it, and hands the resulting project to normal development.
 
@@ -14,7 +14,7 @@ Keep the three reusable workflows distinct:
 
 - the foundation owns rules that remain applicable throughout the project;
 - this bootstrap owns one-time discovery, project-specific selection, initial setup, and bootstrap handoff;
-- the separate continuation workflow owns orientation and task startup for an established project.
+- the separate continuation workflow owns orientation and task startup only at the beginning of a later conversation for an established project.
 
 When the foundation already decides a policy, collect only the concrete project value needed to apply it. For example, collect the two repositories' names and paths without asking whether the required two-repository model should be used.
 
@@ -43,7 +43,9 @@ This workflow does not own:
 - routine startup for an established project;
 - ongoing session orientation, recovery, or resumption.
 
-Ending bootstrap means retiring this workflow, not ending the conversation. After bootstrap approval, the same conversation may continue under the established project sources and continuation workflow. Start a new conversation only when the owner prefers it or the existing context is no longer dependable.
+Bootstrap remains active until the owner approves its outcome. If the conversation ends before approval, supply the foundation and bootstrap again in the next conversation and resume from the durable bootstrap state.
+
+Approval retires this workflow, not the conversation. The same conversation may then continue using the foundation and canonical project sources; do not activate the continuation workflow in that conversation. Supply the continuation workflow only at the beginning of a later conversation. Once bootstrap is approved and retired, never supply or apply it again for that project.
 
 ## 3. Adaptive Discovery Method
 
@@ -77,11 +79,11 @@ For any existing local or remote repository, inspect its identity, visibility, d
 
 Use this workflow for a partial bootstrap only after identifying what is authoritative, what is incomplete, what must be preserved, and what the bootstrap would change. Never overwrite an existing project shape blindly.
 
-If the project is already established, do not force it back through bootstrap or require a new conversation. Explain the classification and transition to the continuation workflow in the same conversation.
+If the project is already established, do not force it back through bootstrap or require a new conversation. Explain the classification, stop applying bootstrap, and continue in the same conversation using the foundation and canonical project sources. Reserve the continuation workflow for a later conversation.
 
-For a replacement or clean-room project, ask the owner to classify prior materials as requirements, visual references, migration inputs, historical evidence, or authorized implementation sources before inspecting or using them.
+For a replacement or clean-room project, ask the owner to classify prior materials as requirements, visual references, migration inputs, historical evidence, or authorized implementation sources before inspecting or using them. Inventory supplied code, content, datasets, fonts, icons, screenshots, designs, and other assets, then collect the project-specific provenance, permission, attribution, and publication facts required by the foundation's source-and-asset-rights rules.
 
-## 5. Establish Project Identity
+## 5. Establish Project Identity And Collaboration
 
 Collect or confirm:
 
@@ -92,12 +94,15 @@ Collect or confirm:
 - application, package, namespace, or distribution identifiers required by credible stack options;
 - development, preview, and production domains or addresses when applicable;
 - reserved local ports when applicable;
+- project working timezone for memory and development records;
 - intended license and documentation language;
 - approved human Git identity if bootstrap Git actions may be requested.
 
 Default the private memory repository name to `<application-name>-agents` unless the owner supplies another name. Its visibility remains private under the foundation.
 
 Keep identifiers provisional until the technology and deployment proposal confirms which ones are actually required. Do not invent unused identifiers merely to complete a questionnaire.
+
+Collect durable owner collaboration preferences, including desired response detail, progress-update cadence, how recommendations and alternatives should be presented, preferred project terminology, and any other working preference that will help later agents collaborate consistently. Keep the project working timezone distinct from any user-facing product timezone.
 
 ## 6. Establish The Product Baseline
 
@@ -128,6 +133,7 @@ Ask only the applicable questions needed to identify:
 - tenant, organization, workspace, or other isolation boundaries;
 - existing data that must be imported, reconciled, or preserved;
 - external systems and which reads, writes, or communications the product requires;
+- the project-specific telemetry decision required by the foundation, including allowed telemetry categories, providers, consent, retention, and prohibited data;
 - scheduled, asynchronous, offline, or long-running behavior;
 - credible initial scale, latency, availability, and growth requirements.
 
@@ -159,6 +165,7 @@ Collect the facts that constrain the technical baseline:
 - deployment unit, process model, and expected service ownership;
 - configuration and secret-management facilities;
 - backup, restore, rollback, monitoring, and support expectations;
+- delivery deadlines, available team capacity, maintenance owner, and expected maintenance horizon;
 - cost, licensing, vendor, residency, or portability constraints;
 - restrictions on containers, persistent processes, background workers, or external infrastructure.
 
@@ -168,13 +175,13 @@ Distinguish current hard limits from future preferences. Do not select infrastru
 
 Ask for hard technology constraints, relevant team experience, strong owner preferences, prohibited choices, and maintenance expectations. Do not ask the owner to select a programming language before explaining the credible options unless the language is already a hard constraint.
 
-Evaluate the smallest credible combinations of language, runtime, application framework, interface technology, data store, persistence approach, package tooling, testing, build tooling, and deployment shape. Include only components the accepted product and operational baseline justifies.
+Evaluate the smallest credible combinations of language, runtime, application framework, interface technology, data store, persistence approach, package tooling, testing, build tooling, and deployment shape.
 
-Verify current versions, support windows, compatibility, licensing, and deployment requirements through primary sources. Record the verification date and source links in the proposal. Do not rely on remembered latest-version claims or stale generator defaults.
+Apply the foundation's dependency, version-verification, and source-and-asset-rights rules to the candidate baseline. Record only the resulting project-specific versions, verification date, sources, compatibility constraints, and license consequences in the proposal.
 
 Recommend one baseline. Present alternatives only when they are genuinely competitive or expose a consequential trade-off. Explain why the recommendation fits this product better; do not select a stack merely because it is fashionable, familiar to the agent, or common in unrelated projects.
 
-Keep framework and generator output subordinate to the product model. Identify optional components, rejected infrastructure, and future decision gates explicitly.
+Identify optional components, rejected infrastructure, and future decision gates explicitly.
 
 ## 11. Define The Project-Specific Working Contract
 
@@ -199,11 +206,11 @@ Before any mutation, present one consolidated proposal containing:
 1. project identity and repository coordinates;
 2. starting-state classification and preserved existing material;
 3. product outcome, users, primary workflow, first-release cutline, completion criteria, and non-goals;
-4. authoritative inputs, evidence, clean-room boundaries, and unresolved conflicts;
+4. authoritative inputs, evidence, clean-room boundaries, source and asset rights, and unresolved conflicts;
 5. domain, data-ownership, trust, integration, and migration direction;
 6. product surfaces and experience constraints;
 7. recommended technology baseline with verified versions, sources, rationale, and trade-offs;
-8. deployment and operational shape;
+8. deployment, delivery, ownership, and maintenance shape;
 9. proposed top-level modules, ownership boundaries, and dependency direction;
 10. first-pass data-model direction without premature schema detail;
 11. applicable canonical documentation and decision artifacts to create;
@@ -213,7 +220,7 @@ Before any mutation, present one consolidated proposal containing:
 
 Clearly distinguish owner-provided facts, verified facts, recommendations, assumptions, open questions, and decisions awaiting approval.
 
-Request explicit approval for each consequential product, architecture, data, security, deployment, and workflow choice. A general request to continue does not approve clearly identified unresolved alternatives. Revise the proposal when an answer changes downstream choices.
+The owner may approve a complete, clearly enumerated proposal with one explicit statement such as `Approve the proposal as written`. That approval covers every item presented as a proposed decision, but it does not resolve alternatives or questions explicitly marked open and does not approve actions excluded from the proposal. Request separate answers only for unresolved alternatives, omissions, or partial approval. Revise the proposal when an answer changes downstream choices.
 
 ## 13. Verify Readiness
 
@@ -234,49 +241,34 @@ If readiness evidence invalidates the approved proposal, stop and revise the aff
 
 Execute only the approved bootstrap deliverables.
 
-- Create, clone, or initialize the exact application and memory repositories only when the corresponding action is authorized.
-- Preserve approved partial-bootstrap material and integrate with it deliberately.
-- Apply the foundation's repository hygiene before running generators or dependency installation.
-- Use the chosen stack's current official scaffold or smallest supported setup when it fits the approved architecture; inspect and deliberately accept, replace, or remove generated defaults.
-- Retain only generated example behavior explicitly accepted in the proposal. Do not mistake starter content for approved product scope.
-- Establish the proposed module boundaries without creating speculative empty layers or features.
-- Create and populate only the applicable canonical project artifacts required by the foundation and named in the proposal.
-- Put the canonical master plan in the application repository and initialize it with approved phases, gates, status, and the first permitted product action.
-- Create the exhaustive codebase map after the tracked scaffold exists.
-- Initialize the foundation's standard private-memory structure with project-specific facts, links, decisions, preferences, current context, and the current day's meaningful bootstrap record.
-- Configure the approved project-specific verification entry points.
+- Perform only the approved repository and scaffold mutations under the foundation's authorization and repository rules.
+- Preserve the material identified by the partial-bootstrap review.
+- Run the selected scaffold mechanism and compare its actual output with the proposal; retain, replace, or remove generator defaults deliberately.
+- Instantiate the foundation-required application documentation, canonical master plan, exhaustive codebase map, and private memory with the accepted project-specific facts and decisions.
+- Establish only the approved initial module boundaries and project-specific verification entry points.
 
-Do not implement the first functional vertical slice. Do not create speculative product routes, screens, schema, integrations, or feature modules to make the scaffold appear more complete.
+Do not implement the first functional vertical slice. The scaffold must not acquire accidental product behavior merely to appear complete.
 
 ## 15. Verify And Review The Bootstrap
 
-Run the exact scaffold verification approved in the proposal together with every applicable foundation gate. Verify the scaffold from its documented entry points rather than relying only on generator success.
+Apply the foundation's verification and evidence rules using the exact scaffold checks approved in the proposal. In addition to those general gates, bootstrap acceptance must prove that:
 
-Check that:
-
-- dependency resolution and lock state are reproducible when dependencies exist;
-- the selected build, static checks, tests, and minimal runtime smoke check succeed as applicable;
-- configuration examples and validation agree without exposing secrets;
-- documentation links and declared source ownership are coherent;
-- the codebase map accounts for every tracked application-repository file;
-- the application and memory repositories contain only material appropriate to their roles;
-- repository status and diffs match the approved bootstrap scope.
+- the approved scaffold exists at the accepted repository locations;
+- it initializes, builds, starts, or otherwise runs through its documented entry point as applicable;
+- its actual technology, deployment shape, modules, and tracked contents match the approved proposal;
+- it contains no unapproved or accidental product behavior;
+- its project-specific documentation and memory are populated and mutually linked as proposed;
+- the canonical master plan identifies the first permitted functional slice;
+- no unresolved bootstrap task prevents that slice from beginning.
 
 Do not add product behavior merely to satisfy an inapplicable generated check. Correct the scaffold or revise the documented verification contract instead.
 
 ## 16. Handoff And Retire Bootstrap
 
-Before declaring bootstrap complete, present:
+Apply the foundation's completion, memory, Git, publication, and handoff rules. Add only the bootstrap-specific handoff facts: the approved proposal, deviations from it, scaffold acceptance result, first permitted functional slice, unresolved bootstrap blockers, and the identity and revision or digest of this bootstrap source.
 
-- the accepted project and technology baseline;
-- the repositories, branches, and local paths established;
-- the created structure and the role of each canonical artifact;
-- verification performed and reproducible results;
-- any authorized commits, pushes, or remote resources and their exact identifiers;
-- known gaps, deferred decisions, and blockers;
-- the canonical master plan's current state and first permitted product action;
-- final status of both repositories.
+Before requesting approval, create one canonical retirement record in private `.agents/decisions.md`. Give it a stable identifier and record the bootstrap source identity, revision or digest, completion evidence, approval status, and retirement status. Other memory files may link to this record but must not copy it.
 
-Update the canonical master plan, private current context, decisions, and current daily session log with the verified bootstrap outcome. Complete any separately authorized publication and confirm the resulting remote state.
+Ask the owner to approve the bootstrap result. On approval, update that record to `Approved` and `Retired`. Never supply or apply this bootstrap again for the project.
 
-Ask the owner to approve the bootstrap result. After approval, stop applying this file. Continue in the same conversation when useful, or in a later conversation when preferred, using the project's canonical sources and the separate continuation workflow.
+The current conversation may proceed directly with the foundation and canonical project sources. At the beginning of a later conversation, supply the foundation and the separate continuation workflow—not this bootstrap.
