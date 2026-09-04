@@ -1,6 +1,6 @@
 # Vibe-Coded Project Bootstrap
 
-Supply the [Vibe-Coded Project Foundation](1-vibe-coding-foundation.md) first. Then supply this workflow once to establish a new application project or complete an appropriate partial bootstrap. Keep it active until the owner approves and retires the bootstrap.
+Supply the [Vibe-Coded Project Foundation](1-vibe-coding-foundation.md) first. Then supply this workflow exactly once for the project to establish a new application or complete an appropriate partial bootstrap. Keep bootstrap as the active project phase until the owner approves and retires it.
 
 The foundation defines the permanent operating rules. This file collects project-specific facts, guides initial decisions, creates the approved non-product scaffold, verifies it, and hands the resulting project to normal development.
 
@@ -43,9 +43,13 @@ This workflow does not own:
 - routine startup for an established project;
 - ongoing session orientation, recovery, or resumption.
 
-Bootstrap remains active until the owner approves its outcome. If the conversation ends before approval, supply the foundation and bootstrap again in the next conversation and resume from the durable bootstrap state.
+Bootstrap remains active until the owner approves its outcome. Do not supply this file again, including when bootstrap spans conversations.
 
-Approval retires this workflow, not the conversation. The same conversation may then continue using the foundation and canonical project sources; do not activate the continuation workflow in that conversation. Supply the continuation workflow only at the beginning of a later conversation. Once bootstrap is approved and retired, never supply or apply it again for that project.
+After project identity and the private memory location are accepted, create one durable bootstrap lifecycle record as soon as that memory repository is available and the owner has authorized the required memory mutation. Use one stable identifier in `.agents/decisions.md` and record the bootstrap source identity and revision or digest, starting-state classification, status, approved facts, current stage, unresolved questions, and next action. Keep status and next action current after each meaningful discovery or execution checkpoint. Other memory files may link to this record but must not duplicate it.
+
+If a later conversation begins before bootstrap approval, the continuation workflow must detect the `In progress` lifecycle record and resume from its recorded stage without receiving this file again. If no durable record exists, reconstruct only from accessible project or conversation evidence and ask for missing facts; never invent prior approval or silently repeat completed work.
+
+Approval retires bootstrap, not the conversation. The same conversation may then continue using the foundation and canonical project sources; do not activate the continuation workflow in that conversation. Supply the continuation workflow only at the beginning of a later conversation. Once bootstrap is approved and retired, never supply or apply it again for that project.
 
 ## 3. Adaptive Discovery Method
 
@@ -63,7 +67,7 @@ For each consequential question:
 
 Do not repeat answered questions. Do not turn low-risk details into blockers when a reversible assumption will suffice; label such assumptions in the proposal.
 
-Do not scaffold, install dependencies, initialize repositories, create remote resources, or write project files before the pre-scaffold proposal is approved.
+Do not scaffold, install dependencies, initialize the application repository, create application files, or create unrelated remote resources before the pre-scaffold proposal is approved. The sole early-write exception is the private-memory bootstrap lifecycle checkpoint defined above. Creating or connecting its repository still requires the applicable authorization.
 
 ## 4. Classify The Starting State
 
@@ -80,6 +84,8 @@ For any existing local or remote repository, inspect its identity, visibility, d
 Use this workflow for a partial bootstrap only after identifying what is authoritative, what is incomplete, what must be preserved, and what the bootstrap would change. Never overwrite an existing project shape blindly.
 
 If the project is already established, do not force it back through bootstrap or require a new conversation. Explain the classification, stop applying bootstrap, and continue in the same conversation using the foundation and canonical project sources. Reserve the continuation workflow for a later conversation.
+
+When durable private memory exists, record this early-exit outcome in the bootstrap lifecycle record: classification `Established project`, outcome `Not applicable`, the evidence supporting that classification, the bootstrap source revision or digest, and status `Retired without execution`. If durable memory is unavailable, report that limitation rather than claiming a persistent retirement record.
 
 For a replacement or clean-room project, ask the owner to classify prior materials as requirements, visual references, migration inputs, historical evidence, or authorized implementation sources before inspecting or using them. Inventory supplied code, content, datasets, fonts, icons, screenshots, designs, and other assets, then collect the project-specific provenance, permission, attribution, and publication facts required by the foundation's source-and-asset-rights rules.
 
@@ -133,11 +139,13 @@ Ask only the applicable questions needed to identify:
 - tenant, organization, workspace, or other isolation boundaries;
 - existing data that must be imported, reconciled, or preserved;
 - external systems and which reads, writes, or communications the product requires;
-- the project-specific telemetry decision required by the foundation, including allowed telemetry categories, providers, consent, retention, and prohibited data;
+- whether optional telemetry or external diagnostic export is needed;
 - scheduled, asynchronous, offline, or long-running behavior;
 - credible initial scale, latency, availability, and growth requirements.
 
 Do not design a detailed schema during discovery. Capture enough ownership, lifecycle, invariants, and risk to evaluate architecture and propose the first data-model direction.
+
+If optional telemetry or external diagnostic export is adopted, collect the allowed categories, purposes, providers, consent basis, retention, user controls, and prohibited data required to instantiate the foundation. If it is not adopted, record that decision and do not ask provider-specific telemetry questions.
 
 ## 8. Establish Product-Surface And Experience Constraints
 
@@ -267,8 +275,8 @@ Do not add product behavior merely to satisfy an inapplicable generated check. C
 
 Apply the foundation's completion, memory, Git, publication, and handoff rules. Add only the bootstrap-specific handoff facts: the approved proposal, deviations from it, scaffold acceptance result, first permitted functional slice, unresolved bootstrap blockers, and the identity and revision or digest of this bootstrap source.
 
-Before requesting approval, create one canonical retirement record in private `.agents/decisions.md`. Give it a stable identifier and record the bootstrap source identity, revision or digest, completion evidence, approval status, and retirement status. Other memory files may link to this record but must not copy it.
+Before requesting approval, ensure the canonical bootstrap lifecycle record contains the source identity and revision or digest, final classification, proposal identity, deviations, completion evidence, first permitted functional slice, approval status `Awaiting approval`, and retirement status `Active`. If durable private memory remains unavailable, disclose that bootstrap cannot be durably approved and retired.
 
-Ask the owner to approve the bootstrap result. On approval, update that record to `Approved` and `Retired`. Never supply or apply this bootstrap again for the project.
+Ask the owner to approve the bootstrap result. On approval, update the same record to approval status `Approved` and retirement status `Retired`. Never supply or apply this bootstrap again for the project.
 
 The current conversation may proceed directly with the foundation and canonical project sources. At the beginning of a later conversation, supply the foundation and the separate continuation workflow—not this bootstrap.

@@ -598,13 +598,15 @@ Upgrade one meaningful dependency layer at a time when practical. Automated depe
 
 ### Source And Asset Rights
 
-Before using, modifying, committing, or publishing supplied, discovered, or generated material, verify its provenance and the project's right to use it. Public availability, repository access, search visibility, or delivery by the owner does not by itself establish permission.
+Before using, modifying, committing, or publishing supplied or discovered third-party material, verify its provenance and the project's right to use it. Public availability, repository access, search visibility, or delivery by the owner does not by itself establish permission.
 
-Apply this check to source code, snippets, templates, text, datasets, fonts, icons, images, screenshots, audio, video, design files, models, generated artifacts, and other third-party material.
+Apply this check to source code, snippets, templates, text, datasets, fonts, icons, images, screenshots, audio, video, design files, models, and other third-party material.
 
 Determine the applicable license or permission, allowed uses, modification and redistribution terms, attribution and notice requirements, privacy or likeness restrictions, trademark constraints, and compatibility with the project's intended license and distribution. Preserve required notices, license files, attribution, provenance, and source references in durable project records.
 
-If material rights are missing, ambiguous, incompatible, or unverifiable, do not incorporate or publish the material. Obtain permission or replace it with material whose rights are clear.
+For generated code, text, images, audio, video, designs, or other output, do not require proof of unknowable training-data provenance. Instead, verify the generator or provider terms and output-use rights, the project's rights to supplied prompts and references, applicable disclosure or attribution duties, and material risks of recognizable copying, trademark misuse, or unauthorized likeness and private-content use. Generation alone does not prove originality, exclusivity, or unrestricted publication rights.
+
+If third-party rights or generated-output usage rights are missing, ambiguous, incompatible, or unverifiable, do not incorporate or publish the material. Obtain permission, complete the necessary review, or replace it with material whose rights are clear.
 
 ## 21. Security And Privacy Foundation
 
@@ -655,11 +657,11 @@ Make background work and integrations observable without exposing content. Recor
 
 ### Telemetry And Diagnostic Data
 
-Treat product analytics, error reporting, performance monitoring, crash reporting, heatmaps, and session replay as deliberate data-collection features, not harmless tooling defaults.
+The minimum first-party operational logs, audit records, health signals, and aggregate service metrics required by this foundation are baseline observability, not optional telemetry. Keep them within the approved project environment unless an external destination is explicitly adopted, and apply the existing privacy and data-minimization rules.
 
-Keep telemetry disabled unless the project explicitly adopts it. A framework, hosting platform, SDK, scaffold, or provider default does not constitute approval.
+Treat product analytics, behavioral tracking, error or crash reporting to an external service, performance-trace export, heatmaps, and session replay as optional telemetry. Keep optional telemetry and external diagnostic export disabled unless the project explicitly adopts them. A framework, hosting platform, SDK, scaffold, or provider default does not constitute approval.
 
-Before enabling telemetry, define and document:
+Before enabling optional telemetry or external diagnostic export, define and document:
 
 - its specific purpose and necessary events;
 - collected fields and prohibited fields;
@@ -674,7 +676,7 @@ Collect the minimum data needed for the approved purpose. Do not send credential
 
 Session replay, keystroke capture, broad DOM capture, and request or response capture require explicit project approval. Disable them on sensitive surfaces and fields, verify masking against rendered output, and prefer aggregate events when they answer the same question.
 
-Do not let third-party telemetry bypass authorization, privacy, content-security, data-residency, configuration, testing, or publication boundaries. Keep development and test activity out of production analytics unless the project explicitly defines safe separation.
+Sending baseline operational data to an external provider is an external diagnostic export and requires explicit project adoption. Do not let third-party telemetry bypass authorization, privacy, content-security, data-residency, configuration, testing, or publication boundaries. Keep development and test activity out of production analytics unless the project explicitly defines safe separation.
 
 ## 23. UI And Design-System Foundation
 
