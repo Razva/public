@@ -800,6 +800,8 @@ Before editing:
 - identify untracked files that overlap the task;
 - preserve unrelated user changes.
 
+Keep operating-system metadata such as `.DS_Store` ignored at repository level. Never stage, commit, or publish it.
+
 Before relying on remote branch state, fetch relevant remote references when access is available. Do not pull, merge, rebase, switch branches, delete branches, or discard changes unless the task requires it or the owner explicitly authorizes it.
 
 Use the approved human Git identity. Never commit as an assistant, model, bot, automation placeholder, or invented person.
