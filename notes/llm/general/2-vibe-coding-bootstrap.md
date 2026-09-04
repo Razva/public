@@ -1,6 +1,6 @@
 # Vibe-Coded Project Bootstrap
 
-Use this workflow once to establish a new application project or complete an appropriate partial bootstrap. Use it together with [Vibe-Coded Project Foundation](vibe-coding-foundation.md), which must be available to the same LLM coding agent.
+Use this workflow once to establish a new application project or complete an appropriate partial bootstrap. Use it together with [Vibe-Coded Project Foundation](1-vibe-coding-foundation.md), which must be available to the same LLM coding agent.
 
 The foundation defines the permanent operating rules. This file collects project-specific facts, guides initial decisions, creates the approved non-product scaffold, verifies it, and hands the resulting project to normal development.
 
