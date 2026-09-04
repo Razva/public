@@ -20,9 +20,17 @@ If the complete foundation cannot be retrieved or its canonical identity, exact 
 
 Do not copy the foundation into this file, project documentation, or private memory. Store only its source identity, exact revision, and content digest where this workflow requires a reference.
 
-## 2. Reconcile The Foundation Revision
+## 2. Load The Current Project
 
-During project orientation, read the foundation source identity, exact Git revision, and content digest previously recorded in `.agents/current-context.md`.
+Execute the complete **Source-Of-Truth Startup Protocol** and **Tool Result Completeness** requirements from the foundation against the current project. Do not reproduce their checklist here.
+
+Use the canonical application and private-memory repository identities and locations recorded by the project. Complete that protocol before relying on a path, branch, plan, decision, preference, current state, or claimed absence.
+
+Do not ask the user to supply the bootstrap file again. Whether its exact recorded revision may be retrieved is determined only by the lifecycle route below.
+
+## 3. Reconcile The Foundation Revision
+
+After establishing the canonical project and memory sources, read the foundation source identity, exact Git revision, and content digest previously recorded in `.agents/current-context.md`.
 
 If no prior value exists, do not establish a baseline until evaluating the bootstrap lifecycle in Section 4. Treat an active bootstrap created under the current bootstrap contract as incomplete; for an older project with no applicable bootstrap record, use the current verified foundation revision and digest as the continuation baseline and disclose that no earlier comparison was possible.
 
@@ -40,30 +48,19 @@ For a purely read-only request that does not otherwise justify a memory update, 
 
 If a relevant revision change cannot be compared reliably, fail closed for work it may affect. State what could not be verified and what evidence is needed.
 
-## 3. Load The Current Project
-
-Execute the complete **Source-Of-Truth Startup Protocol** and **Tool Result Completeness** requirements from the foundation against the current project. Do not reproduce their checklist here.
-
-Use the canonical application and private-memory repository identities and locations recorded by the project. Complete that protocol before relying on a path, branch, plan, decision, preference, current state, or claimed absence.
-
-Do not ask the user to supply the bootstrap file again. Whether its exact recorded revision may be retrieved is determined only by the lifecycle route below.
-
 ## 4. Evaluate The Bootstrap Lifecycle
 
 Find the stable bootstrap identifier and lifecycle fields in `.agents/decisions.md`, then follow its link to the active state in `.agents/current-context.md`.
 
-Evaluate the fields together:
+Before selecting a route, validate that every required field and link exists and that their combination is internally consistent. Investigate missing, incompatible, or contradictory state against repository evidence and relevant history; do not assume approval, retirement, applicability, or permission to proceed. Contradictions include approval `Approved` with retirement `Active`, applicability `Not applicable` with a normal completed-bootstrap claim, or an active lifecycle decision without the linked stage and next action.
 
-- **Retirement status `Active`** — bootstrap remains in progress. Read its canonical source identity, exact Git revision, and content digest from the lifecycle decision. Retrieve that exact revision—not the current branch version—verify its identity and digest, and read it through end-of-file. Then resume the stage and next action from `current-context.md`: if no proposal is approved, continue discovery or proposal preparation; if a proposal is approved, continue the recorded post-approval bootstrap stage. Do not begin functional product work that the unfinished bootstrap has not permitted.
+If the lifecycle state cannot be validated confidently, fail closed for mutating work. Report the exact inconsistency and request only the information needed to resolve it. Otherwise, select exactly one route:
+
+- **Retirement status `Active` and approval status is not `Approved`** — bootstrap remains in progress. Read its canonical source identity, exact Git revision, and content digest from the lifecycle decision. Retrieve that exact revision—not the current branch version—verify its identity and digest, and read it through end-of-file. Then resume the stage and next action from `current-context.md`: if no proposal is approved, continue discovery or proposal preparation; if a proposal is approved, continue the recorded post-approval bootstrap stage. Do not begin functional product work that the unfinished bootstrap has not permitted.
 - **Approval status `Approved` and retirement status `Retired`** — bootstrap completed normally. Route to ordinary project continuation.
 - **Applicability `Not applicable` and retirement status `Retired without execution`** — bootstrap classified an already-established project. Route to ordinary continuation without implying that bootstrap created or approved the existing foundation.
-- **Missing, incompatible, or contradictory fields** — investigate the lifecycle record, its links, repository evidence, and relevant history. Do not assume approval, retirement, applicability, or permission to proceed.
-
-Examples of contradictions include approval `Approved` with retirement `Active`, applicability `Not applicable` with a normal completed-bootstrap claim, or an active lifecycle decision without the linked stage and next action.
 
 Never retrieve or apply the bootstrap file when its retirement status is `Retired` or `Retired without execution`. If an active record lacks an exact retrievable revision, its content digest, or enough source identity to establish the canonical file, fail closed rather than substituting the latest bootstrap version or a remembered copy.
-
-If the lifecycle route cannot be established confidently, fail closed for mutating work. Report the exact inconsistency and request only the information needed to resolve it.
 
 ## 5. Route The Current Request
 
