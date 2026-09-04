@@ -28,15 +28,16 @@ If bootstrap is active, preserve its stable identifier, exact lifecycle fields, 
 
 Supplying this workflow explicitly authorizes the agent to perform the repository mutations required for this closeout:
 
-- update the affected canonical application documentation and private memory;
-- create separate task-scoped local commits in the application and memory repositories for eligible current work;
-- push those exact commits to the repositories' already-configured remotes and current authorized branches after the foundation's publication gate passes.
+- update affected canonical application documentation and private memory where their repositories exist at the current lifecycle stage;
+- create and finalize the task-scoped local commits or provisional checkpoints required by the foundation for eligible current work, and execute its ordered publication sequence to the repositories' already-configured remotes and current authorized branches.
 
 This authorization does not extend to unrelated changes, a different branch or remote, history rewriting, destructive cleanup, pull-request creation or merge, release, deployment, production mutation, external communication, or any other separately controlled action. The foundation's preservation rules remain unchanged. If the authorized target or change boundary is uncertain, stop the affected mutation and report the exact ambiguity.
 
 ## 4. Establish The True Stopping State
 
-Execute the foundation's repository-state inspection for both repositories and any relevant in-progress operation. Reconcile that evidence with the current request, canonical plan state, and bootstrap lifecycle when applicable.
+Execute the foundation's repository-state inspection for every repository that currently exists or is required by the recorded lifecycle stage, plus any relevant in-progress operation. Reconcile that evidence with the current request, canonical plan state, and bootstrap lifecycle when applicable.
+
+If an application repository has not yet been created under the approved bootstrap sequence, record that absence as expected lifecycle state. Do not initialize it during closeout or treat its expected absence as a failure. Treat an unexpectedly missing repository required by the current stage as a closeout exception.
 
 Classify current work accurately as completed and verified, incomplete but preserved, blocked, or unrelated. Finish only closeout-sized verification or documentation necessary to describe existing work truthfully; do not continue substantial implementation merely to produce a cleaner checkpoint.
 
@@ -48,9 +49,9 @@ Update `.agents/current-context.md` under the foundation's existing schema so it
 
 Record this closeout workflow's canonical identity, exact revision, and content digest in the current daily session log. Do not turn it into a durable project decision or a routing field in current context.
 
-Run the applicable foundation verification and publication gates. Commit and push every eligible in-scope change covered by the authorization above, keeping the two repository histories separate. If any relevant change cannot be verified, committed, or pushed safely, leave it intact, describe its exact state and location in current context, and publish the remaining truthful checkpoint only when doing so does not misrepresent or lose that state.
+Run the applicable foundation verification and publication gates, then use the authorization above to execute the foundation's ordered publication sequence for every eligible existing repository. If any relevant change cannot be verified, committed, or pushed safely, leave it intact, describe its exact state and location in current context, and publish the remaining truthful checkpoint only when doing so does not misrepresent or lose that state.
 
-Complete the foundation's post-publication confirmation for both repositories. Treat every remaining local or remote difference as an explicit closeout exception.
+Complete the foundation's post-publication confirmation for every repository included in the closeout. For each project repository not included, record why it is not yet created, not applicable to the current stage, or not safely publishable. Treat every unexplained local or remote difference as an explicit closeout exception.
 
 ## 6. Report The Closeout
 
