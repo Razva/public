@@ -960,16 +960,18 @@ Before any push:
 - confirm the human Git identity, branch, target branch, and remote;
 - perform a push dry run when the workflow supports it.
 
-When publishing both repositories, create both local commits before the first push. Git cannot atomically publish two repositories, so local-first commits preserve a recoverable state if the second push is interrupted.
+When publishing both repositories, create the application commit and a provisional memory-checkpoint commit before the first push. Keep the memory commit unpublished until the application commit's GitHub result has been added to it. This local-first checkpoint preserves a recoverable state because Git cannot atomically publish two repositories.
 
 The normal two-repository publication order is:
 
-1. verify both repositories and create separate local commits;
+1. verify both repositories, create the application commit, and create a separate provisional memory-checkpoint commit containing all facts then available;
 2. push the application commit;
 3. verify the exact application commit's required GitHub checks;
-4. record the exact commit and CI result in the current daily memory log;
-5. finalize and push the memory commit;
+4. record the exact application commit and CI result in the current daily memory log;
+5. amend the still-unpublished memory checkpoint with that result, or create a final follow-up memory commit when the project forbids amendment, then verify and push the resulting memory branch;
 6. confirm both local repositories match their remotes and are clean or explain remaining changes.
+
+Never amend the memory checkpoint after it has been published. If it was published prematurely, preserve it and add a follow-up commit instead.
 
 If publication is interrupted, inspect both repository states and resume the missing step. Do not discard or reconstruct already committed memory unnecessarily.
 

@@ -32,7 +32,7 @@ Do not ask the user to supply the bootstrap file again. Whether its exact record
 
 After establishing the canonical project and memory sources, read the foundation source identity, exact Git revision, and content digest previously recorded in `.agents/current-context.md`.
 
-If no prior value exists, do not establish a baseline until evaluating the bootstrap lifecycle in Section 4. Treat an active bootstrap created under the current bootstrap contract as incomplete; for an older project with no applicable bootstrap record, use the current verified foundation revision and digest as the continuation baseline and disclose that no earlier comparison was possible.
+If no prior value exists, do not establish a baseline until evaluating the bootstrap lifecycle in Section 4. Treat its absence from a lifecycle record created under the current bootstrap contract as inconsistent. For the verified legacy-project route defined below, use the current foundation revision and digest as the continuation baseline and disclose that no earlier comparison was possible.
 
 If the value changed:
 
@@ -50,23 +50,24 @@ If a relevant revision change cannot be compared reliably, fail closed for work 
 
 ## 4. Evaluate The Bootstrap Lifecycle
 
-Find the stable bootstrap identifier and lifecycle fields in `.agents/decisions.md`, then follow its link to the active state in `.agents/current-context.md`.
+Look for the stable bootstrap identifier and lifecycle fields in `.agents/decisions.md`, then follow any link to active state in `.agents/current-context.md`.
 
-Before selecting a route, validate that every required field and link exists and that their combination is internally consistent. Investigate missing, incompatible, or contradictory state against repository evidence and relevant history; do not assume approval, retirement, applicability, or permission to proceed. Contradictions include approval `Approved` with retirement `Active`, applicability `Not applicable` with a normal completed-bootstrap claim, or an active lifecycle decision without the linked stage and next action.
+When a lifecycle record exists, validate its required fields, recorded foundation baseline, conditional proposal reference, links, and combination against the exact routes below. The bootstrap workflow owns creation and transition of this state; continuation only consumes it. Do not assume approval, retirement, applicability, or permission to proceed. Select exactly one route:
 
-If the lifecycle state cannot be validated confidently, fail closed for mutating work. Report the exact inconsistency and request only the information needed to resolve it. Otherwise, select exactly one route:
+- **Active bootstrap** — applicability is `Applicable`, retirement is `Active`, bootstrap approval is `Not requested`, `Awaiting approval`, or `Changes requested`, and the proposal fields match the recorded stage. Retrieve the bootstrap file at its exact recorded revision—not the current branch version—verify its identity, digest, and complete contents, validate the full lifecycle record against that source, then resume the linked stage and next action. Do not begin functional product work that bootstrap has not permitted.
+- **Completed bootstrap** — applicability is `Applicable`, proposal status and bootstrap approval are `Approved`, an approved-proposal reference exists, and retirement is `Retired`. Route to ordinary project continuation.
+- **Established project without bootstrap execution** — applicability, proposal status, and bootstrap approval are `Not applicable`; no approved-proposal reference exists; and retirement is `Retired without execution`. Route to ordinary continuation without implying that bootstrap created or approved the existing project.
+- **Verified legacy established project** — no lifecycle record exists, canonical project sources and repository history demonstrate that the project was established before adoption of the lifecycle contract, and no evidence indicates an active or incomplete bootstrap. Route to ordinary continuation, label the route explicitly, and do not fabricate bootstrap approval or retirement.
 
-- **Retirement status `Active` and approval status is not `Approved`** — bootstrap remains in progress. Read its canonical source identity, exact Git revision, and content digest from the lifecycle decision. Retrieve that exact revision—not the current branch version—verify its identity and digest, and read it through end-of-file. Then resume the stage and next action from `current-context.md`: if no proposal is approved, continue discovery or proposal preparation; if a proposal is approved, continue the recorded post-approval bootstrap stage. Do not begin functional product work that the unfinished bootstrap has not permitted.
-- **Approval status `Approved` and retirement status `Retired`** — bootstrap completed normally. Route to ordinary project continuation.
-- **Applicability `Not applicable` and retirement status `Retired without execution`** — bootstrap classified an already-established project. Route to ordinary continuation without implying that bootstrap created or approved the existing foundation.
+Any other present, absent, incompatible, or contradictory state is invalid. Investigate it against repository evidence and relevant history. If it cannot be resolved confidently, fail closed for mutating work, report the exact inconsistency, and request only the information needed to resolve it.
 
-Never retrieve or apply the bootstrap file when its retirement status is `Retired` or `Retired without execution`. If an active record lacks an exact retrievable revision, its content digest, or enough source identity to establish the canonical file, fail closed rather than substituting the latest bootstrap version or a remembered copy.
+Never retrieve or apply the bootstrap file for a completed, non-executed, or legacy route. If an active record lacks an exact retrievable revision, its content digest, or enough source identity to establish the canonical file, fail closed rather than substituting the latest bootstrap version or a remembered copy.
 
 ## 5. Route The Current Request
 
 If bootstrap is active, treat its recorded stage and next action as the current workflow. Reconcile the user's request with that state: continue compatible bootstrap work, or explain why a requested functional change must wait for bootstrap approval.
 
-If bootstrap is retired or was not applicable, treat the user's current request as the session objective. Use the foundation and canonical project sources to determine the relevant scope, then load only the additional context needed for that objective.
+If bootstrap is retired, was not applicable, or the verified legacy route applies, treat the user's current request as the session objective. Use the foundation and canonical project sources to determine the relevant scope, then load only the additional context needed for that objective.
 
 The user's latest explicit instruction may change the current task under the foundation's precedence rules. It does not silently erase unresolved repository state, bootstrap status, or separately controlled external actions.
 

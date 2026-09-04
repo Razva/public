@@ -44,7 +44,7 @@ Classify current work accurately as completed and verified, incomplete but prese
 
 Apply the foundation's canonical ownership and update rules to every affected application and memory source.
 
-Make `.agents/current-context.md` a concise statement of the state the next session will actually encounter. It must preserve the verified canonical foundation identity, exact revision, and content digest, and identify the current task and lifecycle route, last verified point, active or incomplete work, relevant repository state, blockers, and one concrete next action, while linking to canonical plans, decisions, evidence, and daily history instead of copying them.
+Update `.agents/current-context.md` under the foundation's existing schema so it describes the state the next session will actually encounter. As closeout-specific requirements, preserve the verified canonical foundation identity, exact revision, and content digest and the applicable lifecycle route; link to canonical sources instead of copying them.
 
 Record this closeout workflow's canonical identity, exact revision, and content digest in the current daily session log. Do not turn it into a durable project decision or a routing field in current context.
 
