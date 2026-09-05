@@ -12,15 +12,15 @@ The desired behavior is simple:
 - The dropdown parent is also at least as wide as its widest option.
 - If content is huge, the dropdown stops growing at a reasonable max width and visible text truncates.
 
-## Live Demos
+## Demo
 
-- [HTML Demo](https://razva.github.io/public/notes/ui/dropdowns/demo/)
+Download the [`demo`](demo) directory and open `index.html` in a browser.
 
-The demo uses the Tailwind CSS contract in [`demo/dropdown-demo.css`](demo/dropdown-demo.css).
+The standalone demo uses plain CSS that mirrors the Tailwind contract, so it works without a build step.
 
 Source links:
 
-- [Tailwind dropdown CSS](https://github.com/Razva/public/blob/main/notes/ui/dropdowns/demo/dropdown-demo.css)
+- [Standalone dropdown CSS](https://github.com/Razva/public/blob/main/notes/ui/dropdowns/demo/dropdown-demo.css)
 - [HTML Source](https://github.com/Razva/public/tree/main/notes/ui/dropdowns/demo)
 
 ## Features
@@ -98,11 +98,11 @@ The HTML demo is for understanding DOM behavior, not for recommending a producti
 
 It uses:
 
-- the Tailwind CSS source beside the HTML demo at `demo/dropdown-demo.css`;
+- a plain CSS implementation of the Tailwind contract;
 - a separate JavaScript file for dropdown behavior;
-- a separate SVG sprite for icons.
+- inline SVG icons so local browsers do not need to load another file.
 
-The HTML demo loads Tailwind in the browser so the same Tailwind-authored CSS contract can be used without a build step.
+The demo has no build step and can be opened directly from the downloaded directory.
 
 ## Production Guidance
 

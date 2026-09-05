@@ -4,9 +4,32 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>HTML Dropdown Demo</title>
-    <script type="module" src="dropdown-demo.js"></script>
+    <link rel="stylesheet" href="dropdown-demo.css" />
+    <script defer src="dropdown-demo.js"></script>
   </head>
   <body class="demo-page">
+    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" hidden>
+      <symbol id="icon-align-left" viewBox="0 0 24 24">
+        <path d="M15 12H3M17 18H3M21 6H3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+      </symbol>
+      <symbol id="icon-align-justify" viewBox="0 0 24 24">
+        <path d="M3 6h18M3 12h18M3 18h18" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+      </symbol>
+      <symbol id="icon-align-center" viewBox="0 0 24 24">
+        <path d="M17 12H7M19 18H5M21 6H3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+      </symbol>
+      <symbol id="icon-chevron-down" viewBox="0 0 24 24">
+        <path d="m6 9 6 6 6-6" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+      </symbol>
+      <symbol id="icon-search" viewBox="0 0 24 24">
+        <circle cx="11" cy="11" r="8" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+        <path d="m21 21-4.3-4.3" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+      </symbol>
+      <symbol id="icon-check" viewBox="0 0 24 24">
+        <path d="M20 6 9 17l-5-5" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
+      </symbol>
+    </svg>
+
     <main>
       <h1 class="demo-title">HTML Dropdown Demo</h1>
       <p class="demo-copy">
@@ -17,9 +40,9 @@
       <div class="dropdown-root" data-dropdown>
         <div class="dropdown-measure" aria-hidden="true">
           <button class="dropdown-trigger" tabindex="-1" type="button">
-            <svg class="dropdown-icon"><use href="lucide-sprite.svg#icon-search"></use></svg>
+            <svg class="dropdown-icon"><use href="#icon-search"></use></svg>
             <span class="dropdown-text">Type/Select</span>
-            <svg class="dropdown-icon"><use href="lucide-sprite.svg#icon-chevron-down"></use></svg>
+            <svg class="dropdown-icon"><use href="#icon-chevron-down"></use></svg>
           </button>
           <div class="dropdown-measure-menu-frame">
             <div class="dropdown-measure-menu" data-measure-menu></div>
@@ -28,16 +51,16 @@
 
         <button class="dropdown-trigger" data-trigger type="button">
           <svg class="dropdown-icon" data-trigger-icon>
-            <use href="lucide-sprite.svg#icon-search"></use>
+            <use href="#icon-search"></use>
           </svg>
           <span class="dropdown-text dropdown-placeholder" data-value>Type/Select</span>
-          <svg class="dropdown-icon"><use href="lucide-sprite.svg#icon-chevron-down"></use></svg>
+          <svg class="dropdown-icon"><use href="#icon-chevron-down"></use></svg>
         </button>
 
         <label class="dropdown-search dropdown-hidden" data-search>
-          <svg class="dropdown-icon"><use href="lucide-sprite.svg#icon-search"></use></svg>
+          <svg class="dropdown-icon"><use href="#icon-search"></use></svg>
           <input class="dropdown-input" aria-label="Search options" data-input />
-          <svg class="dropdown-icon"><use href="lucide-sprite.svg#icon-chevron-down"></use></svg>
+          <svg class="dropdown-icon"><use href="#icon-chevron-down"></use></svg>
         </label>
 
         <div class="dropdown-menu dropdown-hidden" data-menu></div>

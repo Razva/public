@@ -1,106 +1,218 @@
-@import "tailwindcss";
-
-@layer base {
-  * {
-    @apply box-border;
-  }
-
-  body {
-    @apply m-0;
-  }
+* {
+  box-sizing: border-box;
 }
 
-@layer components {
-  .demo-page {
-    @apply min-h-screen bg-slate-50 p-12 text-slate-900;
-    font-family:
-      ui-sans-serif,
-      system-ui,
-      sans-serif,
-      "Apple Color Emoji",
-      "Segoe UI Emoji",
-      "Segoe UI Symbol",
-      "Noto Color Emoji";
-  }
+body {
+  margin: 0;
+}
 
-  .demo-title {
-    @apply mb-2 text-2xl font-semibold leading-tight;
-  }
+button,
+input {
+  font: inherit;
+}
 
+.demo-page {
+  min-height: 100vh;
+  padding: 3rem;
+  color: #0f172a;
+  background: #f8fafc;
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    "Noto Color Emoji";
+}
+
+.demo-title {
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 2rem;
+}
+
+.demo-copy {
+  margin: 0 0 2rem;
+  color: #475569;
+}
+
+.demo-link {
+  color: #4f46e5;
+  text-decoration: underline;
+}
+
+.dropdown-root {
+  position: relative;
+  display: inline-grid;
+  width: max-content;
+  max-width: 24rem;
+}
+
+.dropdown-measure {
+  display: grid;
+  grid-column: 1;
+  grid-row: 1;
+  visibility: hidden;
+  pointer-events: none;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.dropdown-measure-menu-frame {
+  grid-column: 1;
+  grid-row: 1;
+  height: 0;
+  overflow: hidden;
+}
+
+.dropdown-measure-menu {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.dropdown-measure-option {
+  display: inline-flex;
+  align-items: center;
+  width: max-content;
+  height: 2.25rem;
+  padding: 0 0.75rem;
+  gap: 0.5rem;
+  border: 1px solid transparent;
+  border-radius: 0.375rem;
+  white-space: nowrap;
+}
+
+.dropdown-trigger {
+  display: inline-flex;
+  grid-column: 1;
+  grid-row: 1;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 2.5rem;
+  padding: 0 0.75rem;
+  gap: 0.5rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.375rem;
+  color: #0f172a;
+  background: #fff;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.dropdown-trigger:hover {
+  background: #f8fafc;
+}
+
+.dropdown-search {
+  position: absolute;
+  inset: 0;
+  z-index: 20;
+  display: inline-flex;
+  grid-column: 1;
+  grid-row: 1;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 2.5rem;
+  padding: 0 0.75rem;
+  gap: 0.5rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 0.375rem;
+  color: #0f172a;
+  background: #fff;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.dropdown-input {
+  flex: 1;
+  width: 0;
+  min-width: 0;
+  padding: 0;
+  border: 0;
+  outline: none;
+  background: transparent;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  margin-top: 0.25rem;
+  padding: 0.25rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.375rem;
+  background: #fff;
+  box-shadow: 0 10px 15px -3px rgb(15 23 42 / 0.1), 0 4px 6px -4px rgb(15 23 42 / 0.1);
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
+.dropdown-option {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 2.25rem;
+  padding: 0 0.75rem;
+  gap: 0.5rem;
+  border: 1px solid transparent;
+  border-radius: 0.375rem;
+  color: #0f172a;
+  background: transparent;
+  text-align: left;
+}
+
+.dropdown-option:hover,
+.dropdown-option-active {
+  border-color: #e2e8f0;
+  background: #f8fafc;
+}
+
+.dropdown-option-selected {
+  color: #4f46e5;
+}
+
+.dropdown-icon {
+  flex-shrink: 0;
+  width: 1em;
+  height: 1em;
+}
+
+.dropdown-text,
+.dropdown-row-text {
+  min-width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.dropdown-text {
+  flex: 1;
+  text-align: left;
+}
+
+.dropdown-placeholder {
+  color: #475569;
+}
+
+.dropdown-hidden {
+  display: none;
+}
+
+@media (min-width: 768px) {
   .demo-copy {
-    @apply mb-8 text-slate-600 md:whitespace-nowrap;
-  }
-
-  .demo-link {
-    @apply text-indigo-600 underline;
-  }
-
-  .dropdown-root {
-    @apply relative inline-grid w-max max-w-sm;
-  }
-
-  .dropdown-measure {
-    @apply pointer-events-none invisible col-start-1 row-start-1 grid text-sm;
-  }
-
-  .dropdown-measure-menu-frame {
-    @apply col-start-1 row-start-1 h-0 overflow-hidden;
-  }
-
-  .dropdown-measure-menu {
-    @apply inline-flex flex-col items-stretch gap-1 rounded-md border border-slate-200 p-1 text-sm;
-  }
-
-  .dropdown-measure-option {
-    @apply inline-flex h-9 w-max items-center gap-2 whitespace-nowrap rounded-md border border-transparent px-3;
-  }
-
-  .dropdown-trigger {
-    @apply col-start-1 row-start-1 inline-flex h-10 w-full items-center justify-between gap-2 rounded-md border border-slate-300 bg-white px-3 text-sm text-slate-900 hover:bg-slate-50;
-  }
-
-  .dropdown-search {
-    @apply absolute inset-0 z-20 col-start-1 row-start-1 inline-flex h-10 w-full items-center justify-between gap-2 rounded-md border border-slate-300 bg-white px-3 text-sm text-slate-900;
-  }
-
-  .dropdown-input {
-    @apply w-0 min-w-0 flex-1 border-0 bg-transparent p-0 font-[inherit] outline-none;
-  }
-
-  .dropdown-menu {
-    @apply absolute left-0 top-full z-10 mt-1 w-full rounded-md border border-slate-200 bg-white p-1 text-sm shadow-lg;
-  }
-
-  .dropdown-option {
-    @apply flex h-9 w-full items-center gap-2 rounded-md border border-transparent bg-transparent px-3 text-left text-slate-900 hover:border-slate-200 hover:bg-slate-50;
-    font: inherit;
-  }
-
-  .dropdown-option-active {
-    @apply border-slate-200 bg-slate-50;
-  }
-
-  .dropdown-option-selected {
-    @apply text-indigo-600;
-  }
-
-  .dropdown-icon {
-    @apply size-[1em] shrink-0;
-  }
-
-  .dropdown-text {
-    @apply min-w-0 flex-1 truncate text-left;
-  }
-
-  .dropdown-placeholder {
-    @apply text-slate-600;
-  }
-
-  .dropdown-row-text {
-    @apply truncate;
-  }
-
-  .dropdown-hidden {
-    @apply hidden;
+    white-space: nowrap;
   }
 }

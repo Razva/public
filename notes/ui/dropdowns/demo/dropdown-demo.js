@@ -1,4 +1,4 @@
-const iconHref = (name) => `lucide-sprite.svg#${name}`;
+const iconHref = (name) => `#${name}`;
 
 const options = [
   { icon: "icon-align-left", label: "Short" },
@@ -6,24 +6,7 @@ const options = [
   { icon: "icon-align-center", label: "Medium option" },
 ];
 
-await loadTailwind();
 initDropdown(document.querySelector("[data-dropdown]"));
-
-async function loadTailwind() {
-  const css = await fetch("dropdown-demo.css").then((response) => response.text());
-  const style = document.createElement("style");
-  style.type = "text/tailwindcss";
-  style.textContent = css;
-  document.head.append(style);
-
-  await new Promise((resolve, reject) => {
-    const script = document.createElement("script");
-    script.src = "https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4";
-    script.onload = resolve;
-    script.onerror = reject;
-    document.head.append(script);
-  });
-}
 
 function initDropdown(root) {
   if (!root) return;
