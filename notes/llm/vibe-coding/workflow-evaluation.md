@@ -1,6 +1,17 @@
 # Workflow Evaluation For Maintainers
 
-This file is not a project prompt. Do not paste it into a project coding session. Use it when changing Files 1–4.
+This file is not a project prompt. Do not paste it into a project coding session. It is the mandatory entry point for a maintenance session changing Files 1–4; read it completely before editing them.
+
+Use this sequence:
+
+1. inspect the current exact revisions of Files 1–4 and the status below;
+2. make and verify the approved workflow changes;
+3. commit Files 1–4 as one workflow revision;
+4. in a following status-only commit, target that exact revision and set its status to `Pending independent review`;
+5. have an evaluator who did not author the change evaluate every fixed scenario against that exact revision;
+6. replace the current status with the evaluation date, totals, independence result, and `Reviewed`, `Provisional`, or `Failed`.
+
+Do not claim the changed workflows are finished or reviewed before this sequence is complete. Do not append past status blocks.
 
 Evaluate every scenario for each workflow revision; `Not applicable` is not a passing result. At least three scenarios, selected to exercise the changed areas, must run as real or constructed project-state walkthroughs, fixtures, or automated tests rather than clause tracing. The working review must identify the method and evidence for each scenario, but retaining or publishing that detailed report is not required.
 

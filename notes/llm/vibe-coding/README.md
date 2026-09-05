@@ -35,4 +35,8 @@ File 3 is not required. File 4 can recover when the previous session ended witho
 
 File 3 may deliberately refuse to commit or push when it cannot verify its canonical workflow or the required repository authority. Resolve the reported problem or give separate explicit permission for the specific action; do not assume the closeout succeeded.
 
-If you change these prompt files, use the fixed [maintainer evaluation](workflow-evaluation.md). It is not a prompt and should never be pasted into a project session.
+## Maintaining These Files
+
+Before asking an agent to change Files 1–4, tell it to read this README and the complete [maintainer evaluation](workflow-evaluation.md). The evaluation file is the maintenance entry point; it is not a project prompt and should never be pasted into an application-development session.
+
+After a workflow change is committed, its exact revision remains `Pending independent review` until a different agent evaluates every fixed scenario. Only then may the current status become `Reviewed`. Do not describe changed workflow files as finished while their recorded revision or status is outdated.
