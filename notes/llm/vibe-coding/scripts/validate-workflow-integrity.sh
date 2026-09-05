@@ -19,6 +19,11 @@ fail() {
   exit 1
 }
 
+for required_file in "$FILE_1" "$FILE_2" "$FILE_3" "$FILE_4" "$README_FILE" "$SERVER_README"; do
+  [[ -f "$required_file" ]] ||
+    fail "required workflow file is missing from the working tree: ${required_file#"$REPOSITORY_ROOT"/}"
+done
+
 require_matching_sets() {
   local actual="$1"
   local expected="$2"
@@ -31,6 +36,12 @@ TRACKED_WORKFLOW_PATHS="$(
   git -C "$REPOSITORY_ROOT" ls-files -- "$WORKFLOW_PATH" |
     sort -u
 )"
+
+while IFS= read -r tracked_workflow_path; do
+  [[ -n "$tracked_workflow_path" ]] || continue
+  [[ -e "$REPOSITORY_ROOT/$tracked_workflow_path" ]] ||
+    fail "tracked workflow path is missing from the working tree: $tracked_workflow_path"
+done <<< "$TRACKED_WORKFLOW_PATHS"
 
 TRACKED_MARKDOWN_PATHS="$(
   printf '%s\n' "$TRACKED_WORKFLOW_PATHS" |
