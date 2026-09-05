@@ -24,10 +24,10 @@ At least one evaluator who did not author the change must review the results. Un
 ## Current Evaluation Status
 
 - **Workflow revision:** `b489f0db4fd2f39c48117812761675b104f2bde7`
-- **Evaluation date:** Pending
-- **Result:** Pending
-- **Independent review:** No
-- **Status:** Pending independent review
+- **Evaluation date:** 2026-09-05
+- **Result:** 21 of 21 fixed scenarios passed; 4 run as project-state walkthroughs or fixtures; validator passed from 7 directories and rejected 24 of 24 in-scope structural and missing-file mutations; no open defects
+- **Independent review:** Yes
+- **Status:** Reviewed
 
 ## Fixed Scenarios
 
