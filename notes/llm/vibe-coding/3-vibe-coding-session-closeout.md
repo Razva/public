@@ -63,6 +63,6 @@ Complete the foundation's post-publication confirmation for every repository inc
 
 Return the foundation's concise completion-and-handoff report, adding the exact closeout-workflow revision and digest, whether the checkpoint was fully published, every closeout exception, and the lifecycle route and next action that continuation should discover.
 
-Do not generate a second handoff summary for the user to paste into the next conversation. The canonical application repository and private memory repository are normally the handoff. In the later conversation, the user supplies only the [continuation workflow](4-vibe-coding-continuation.md) and their current request.
+Do not generate a second handoff summary for the user to paste into the next conversation. The canonical application repository and private memory repository are normally the handoff. In the later conversation, the user supplies only the [continuation workflow](https://github.com/Razva/public/blob/main/notes/llm/vibe-coding/4-vibe-coding-continuation.md) and their current request.
 
 The non-writer path in Section 5 is the exception: return only its minimal reconciliation notice and state that the checkpoint is not yet durable in private memory. The owner must direct the designated writer and integrator to reconcile it; do not present that notice as a completed repository handoff.
