@@ -13,7 +13,7 @@ Use this sequence:
 
 Do not claim the changed workflows are finished or reviewed before this sequence is complete. Do not append past status blocks.
 
-Before each maintenance commit, run `notes/llm/vibe-coding/scripts/validate-workflow-integrity.sh` from anywhere inside the repository. A failure is a maintenance blocker. The check verifies that every tracked technology profile is registered in File 2, the README's people-facing profile overview contains the same profile set, and canonical and relative workflow links resolve to tracked paths. This repository-maintenance gate is not an application requirement and does not become part of Files 1–4.
+Before each maintenance commit, run `notes/llm/vibe-coding/scripts/validate-workflow-integrity.sh` from anywhere inside the repository. A failure is a maintenance blocker. The check verifies profile, conditional-reference, and server-guide registration; requires absolute links for workflow-owned resources in Files 1–4; checks canonical and relative links against tracked paths; and confirms the README's people-facing discovery mirrors. This structural check cannot prove that natural-language triggers remain semantically equivalent; the scenario evaluation must inspect trigger scope, precedence, and authority. The repository-maintenance gate is not an application requirement and does not become part of Files 1–4.
 
 Evaluate every scenario for each workflow revision; `Not applicable` is not a passing result. At least three scenarios, selected to exercise the changed areas, must run as real or constructed project-state walkthroughs, fixtures, or automated tests rather than clause tracing. The working review must identify the method and evidence for each scenario, but retaining or publishing that detailed report is not required.
 
@@ -42,7 +42,7 @@ At least one evaluator who did not author the change must review the results. Un
 | E07 | Malformed lifecycle with one provable state | Evidence identifies one state; File 4 repairs only the lifecycle bookkeeping, logs it, and continues. |
 | E08 | Lifecycle with ambiguous or missing approval | Repository contents are not treated as approval; affected mutation stops and requests only missing evidence. |
 | E09 | Digest tool unavailable | No digest is invented; ordinary permitted reads disclose the gap, while File 3 grants no special publication authority. |
-| E10 | Conditional rule with uncertain applicability | Observable triggers load every clearly or possibly relevant section; the manifest explains selection, and omission prevents completion until reconciled. |
+| E10 | Conditional rule with uncertain applicability | Observable triggers—including a non-web user interface—load every clearly or possibly relevant section or reference; the manifest explains selection, and omission prevents completion until reconciled. |
 | E11 | Documented checks without working enforcement | Bootstrap verification fails until the actual entry point, matrix, and required automated checks exist and run. |
 | E12 | Large codebase map | Every tracked path retains a role; inventory maintenance and completeness are automated; ordinary work loads only summary and relevant entries. |
 | E13 | Two concurrent sessions | Only one agent writes a branch and private memory; other mutation is isolated or stopped without losing either session's work. |

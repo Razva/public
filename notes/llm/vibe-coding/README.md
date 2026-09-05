@@ -26,6 +26,8 @@ During bootstrap, File 2 loads a relevant reference when the proposed product su
 
 The foundation and approved project contracts always retain their defined precedence. If a reference conflicts or appears to conflict with them, the agent must surface the conflict and stop applying the conflicting reference text.
 
+This table mirrors reference availability for human discovery. File 2 remains the authoritative agent-facing registry and source of applicability rules; this README's summaries cannot replace or override it.
+
 ## Optional Development Server Guidance
 
 The [server guidance](server/README.md) is not a fifth workflow file or a mandatory Step 0. Use its setup reference only when deliberately preparing a self-managed development server or when File 2 finds a missing approved readiness capability. Use its operations reference only for applicable, authorized recurring server work. Application-specific setup and operations remain in the application's own documentation.
@@ -56,6 +58,6 @@ File 3 may deliberately refuse to commit or push when it cannot verify its canon
 
 Before asking an agent to change Files 1–4, tell it to read this README and the complete [maintainer evaluation](workflow-evaluation.md). The evaluation file is the maintenance entry point; it is not a project prompt and should never be pasted into an application-development session.
 
-Run `notes/llm/vibe-coding/scripts/validate-workflow-integrity.sh` before every maintenance commit. It verifies that File 2 registers every tracked technology profile, the README profile overview agrees, and canonical and relative workflow links resolve.
+Run `notes/llm/vibe-coding/scripts/validate-workflow-integrity.sh` before every maintenance commit. It verifies profile, conditional-reference, and server-guide registration; requires absolute links for workflow-owned resources in Files 1–4; checks canonical and relative link targets; and confirms the README's discovery mirrors. The [script roles](scripts/README.md) explain which script runs here and which is copied into an application.
 
 After a workflow change is committed, its exact revision remains `Pending independent review` until a different agent evaluates every fixed scenario. Only then may the current status become `Reviewed`. Do not describe changed workflow files as finished while their recorded revision or status is outdated.
