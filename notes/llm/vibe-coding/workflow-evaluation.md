@@ -11,10 +11,10 @@ At least one evaluator who did not author the change must review the results. Un
 ## Current Evaluation Status
 
 - **Workflow revision:** `1d8ff532be72232466a347218bbd46f125d15303`
-- **Evaluation date:** Pending
-- **Result:** Pending
-- **Independent review:** No
-- **Status:** Pending independent review
+- **Evaluation date:** 2026-09-05
+- **Result:** 21 passed, 0 failed
+- **Independent review:** Yes
+- **Status:** Reviewed
 
 ## Fixed Scenarios
 
