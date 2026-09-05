@@ -13,7 +13,7 @@ Usage:
   NEXT_DEV_SERVICE=<service>.service bash scripts/clear-next-dev-cache.sh
   bash scripts/clear-next-dev-cache.sh --confirm-stopped
 
-Clears the complete local Next.js build cache and TypeScript incremental state.
+Clears the complete disposable local Next.js build cache and TypeScript incremental state.
 
 The script never uses elevated privileges or kills arbitrary processes. It either
 stops and restarts an explicitly configured user-level systemd service, or requires

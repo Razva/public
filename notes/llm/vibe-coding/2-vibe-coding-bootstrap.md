@@ -122,7 +122,7 @@ Identify required browser, mobile, desktop, API, command-line, embedded, or docu
 
 Classify visual material as evidence or approved direction. It cannot silently determine architecture, data ownership, routes, or source structure.
 
-When the product includes a user interface, retrieve the complete canonical [Web UI Component Patterns](https://github.com/Razva/public/blob/main/notes/llm/vibe-coding/references/web-ui-component-patterns.md) reference at an exact revision. Treat it as a non-authoritative seed under the foundation: it grants no permission, cannot weaken a foundation requirement, and cannot override an established project contract. Select only patterns relevant to the proposed product and stack, identify deviations, and include their proposed local ownership in the pre-scaffold proposal. After approval, record the adopted behaviour in the application's canonical `docs/ui/` contract; later sessions use that local contract rather than silently inheriting future reference changes.
+When the product includes a user interface, retrieve the complete canonical [UI Component Patterns](https://github.com/Razva/public/blob/main/notes/llm/vibe-coding/references/ui-component-patterns.md) reference at an exact revision. Treat it as a non-authoritative seed under the foundation: it grants no permission, cannot weaken a foundation requirement, and cannot override an established project contract. Select only patterns relevant to the proposed product and stack, identify deviations, and include their proposed local ownership in the pre-scaffold proposal. After approval, record the adopted behaviour in the application's canonical `docs/ui/` contract; later sessions use that local contract rather than silently inheriting future reference changes.
 
 ## 9. Establish Delivery And Operations
 
@@ -138,7 +138,7 @@ Evaluate the smallest credible combinations of language, runtime, framework, int
 
 Recommend one baseline for this product. Show alternatives only for consequential trade-offs. Identify optional components, rejected infrastructure, and future gates.
 
-Reusable technology profiles are conditional technical references, never additional workflows. When a technology is required by an owner constraint, detected in preserved project material, or becomes a credible candidate for the recommended baseline, inspect the maintained profile index and retrieve each matching canonical profile completely at an exact revision before finalizing the recommendation. For TypeScript-related work, begin with the [TypeScript Profile Index](https://github.com/Razva/public/blob/main/notes/llm/typescript/README.md); load its Next.js profile only when Next.js is independently applicable.
+Reusable technology profiles are conditional technical references, never additional workflows. When a technology is required by an owner constraint, detected in preserved project material, or becomes a credible candidate for the recommended baseline, retrieve each matching canonical profile completely at an exact revision before finalizing the recommendation. When TypeScript is applicable, retrieve the [TypeScript Project Profile](https://github.com/Razva/public/blob/main/notes/llm/vibe-coding/profiles/typescript.md); apply its conditional Next.js guidance only when Next.js is independently required, detected, or a credible candidate.
 
 A profile may refine stack-specific recommendations but must not replace or reproduce Files 1–4, grant authority, change lifecycle state, weaken verification, mark foundation rules inapplicable, or override an approved project contract. Surface any actual or possible conflict and stop applying the conflicting profile text. Include the selected profile identities, revisions, proposed adoptions, and deviations in the pre-scaffold proposal. After approval, write the accepted project-specific contract into the application repository. Do not make later sessions reload a reusable profile for ordinary work when the local contract answers the question.
 
@@ -174,6 +174,8 @@ When presenting it, transition to `active-proposal`. After explicit approval, st
 ## 13. Verify Readiness
 
 After approval, verify repository identity/paths, GitHub access/visibility, required local tools and versions, runtime/package/build/test/data/container/browser/service capabilities, selected ports/domains/permissions/reachability, and conflicting files/processes. Classify gaps as blocking or deferrable and report owner, administrator, credential, billing, or provider actions separately. If evidence invalidates the proposal, revise the decision before scaffolding.
+
+When an approved self-managed development target lacks required machine- or user-level capabilities, consult the complete canonical [Development Server Setup](https://github.com/Razva/public/blob/main/notes/llm/vibe-coding/server/setup.md) at an exact revision. It is an optional readiness reference, not Step 0, a bootstrap state, or an authority grant. Select only capabilities required by the approved project. The owner may instead provision a server independently before this workflow and provide its verified readiness as discovery evidence.
 
 ## 14. Create The Approved Non-Product Scaffold
 

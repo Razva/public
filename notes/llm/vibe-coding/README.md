@@ -21,11 +21,14 @@ During bootstrap, File 2 loads a relevant reference when the proposed product su
 
 | Reference | Load when |
 | --- | --- |
-| [Web UI Component Patterns](references/web-ui-component-patterns.md) | The product has a user interface and reusable component behaviour is relevant. |
-| [TypeScript Project Profile](../typescript/typescript-project-profile.md) | TypeScript is required, detected, or a credible candidate for the approved stack. |
-| [Next.js Project Profile](../typescript/nextjs-project-profile.md) | Next.js is required, detected, or a credible candidate for the approved stack. |
+| [UI Component Patterns](references/ui-component-patterns.md) | The product has a user interface and reusable component behaviour is relevant. |
+| [TypeScript Project Profile](profiles/typescript.md) | TypeScript is required, detected, or a credible candidate for the approved stack. Its Next.js section applies only when Next.js is independently relevant. |
 
 The foundation and approved project contracts always retain their defined precedence. If a reference conflicts or appears to conflict with them, the agent must surface the conflict and stop applying the conflicting reference text.
+
+## Optional Development Server Guidance
+
+The [server guidance](server/README.md) is not a fifth workflow file or a mandatory Step 0. Use its setup reference only when deliberately preparing a self-managed development server or when File 2 finds a missing approved readiness capability. Use its operations reference only for applicable, authorized recurring server work. Application-specific setup and operations remain in the application's own documentation.
 
 ## First Session
 
