@@ -132,7 +132,7 @@ This table helps people discover the available references. File 2 remains the au
 
 ## Optional Development Server Guidance
 
-The [server guidance](server/README.md) is not a fifth workflow file and is not a required first step. Use the setup guide only when deliberately preparing a self-managed development server or when File 2 finds that an approved readiness capability is missing. Use the operations guide only for relevant and authorized recurring server work. Each application must keep its own setup and operations instructions in its own documentation.
+The [server guidance](server/README.md) is not a fifth workflow file and is not a required first step. Use the setup guide only when deliberately preparing a self-managed Codex development server or when File 2 finds that an approved readiness capability is missing on one. Once the setup guide is adopted, its documented baseline is required; existing working capabilities are verified and preserved rather than reinstalled. Use the operations guide only for relevant and authorized recurring server work. Each application must keep its own setup and operations instructions in its own documentation.
 
 ## Maintaining These Files
 
