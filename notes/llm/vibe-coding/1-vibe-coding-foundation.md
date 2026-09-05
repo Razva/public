@@ -23,8 +23,13 @@ Use this conservative router:
 
 | Observable property of the work | Load |
 | --- | --- |
-| Any application-repository mutation | Sections 3, 6–8, 11–13, and 30 |
+| Any application-repository mutation | Sections 3, 6, and 30 |
 | Any private-memory mutation | Sections 3–5 and 30 |
+| Product scope, master-plan phases, status, acceptance, or sequencing changes | Section 7 |
+| A tracked file is added, moved, renamed, removed, repurposed, or given a different ownership role | Section 8 |
+| Module responsibility, dependency direction, entry points, or application boundaries change | Section 11 |
+| Handwritten code, tests, scripts, styles, configuration, migrations, fixtures, or datasets are added or materially changed | Section 12 |
+| User-visible or business behavior changes across one or more application layers | Section 13 |
 | A persisted value, business state, calculation, configurable default, time rule, retention rule, deletion, or newly reachable state changes | Section 14 |
 | A mutation may be concurrent, stale, repeated, retried, double-submitted, or partially completed | Section 15 |
 | A schema, import, backfill, constraint, seed, or stored-data representation changes | Section 16 |
@@ -50,6 +55,8 @@ Use this conservative router:
 Some changes trigger several rows. For example, adding a queued provider write loads Sections 15, 17, 18, 21, 22, and 27. Adding a reference, foreign key, or newly reachable state loads Sections 14, 16, and 28.
 
 At the beginning of a work unit, provide a concise rule manifest containing the verified foundation revision and digest, selected section numbers with their observable triggers, and expected verification gates. Update it if the task expands. The manifest references rules; it does not copy them into memory or project documentation.
+
+The manifest is an auditable declaration, not proof that selection is complete. A human reviewer or triggered verification may still expose an omission. An absent or stale manifest is a completion failure: reconstruct and reconcile it against the final diff before claiming the work complete.
 
 ## 1. Rule Meaning And Precedence
 
@@ -168,9 +175,9 @@ Private memory links to the plan and keeps only immediate handoff context. A pub
 
 Maintain `docs/architecture/codebase-map.md` as the exhaustive navigation and ownership index. Every application-repository tracked file must appear by exact literal path with a concise role, including source, tests, fixtures, scripts, configuration, migrations, data, documentation, assets, binaries, CI, deployment, operations, manifests, lockfiles, and root files. Exclude only untracked material such as `.git`, installed dependencies, caches, temporary files, secrets, and build output.
 
-The tracked path inventory, insertion, removal, ordering, and missing-path detection must be automated from Git. Conventional files may receive deterministic generated roles, such as “dependency lockfile” or “CI workflow,” but every path still has a role. Non-obvious source, tests, fixtures, scripts, configuration, assets, and documents require an authored description. Generation must preserve authored descriptions and fail when an unclassified new path lacks one.
+Section 29's required automation owns tracked-path inventory, insertion, removal, ordering, and completeness from Git. It must fail for an undocumented or nonexistent path. Conventional files may receive deterministic generated roles, such as “dependency lockfile” or “CI workflow,” but every path still has a role. Non-obvious source, tests, fixtures, scripts, configuration, assets, and documents require an authored description, which generation must preserve.
 
-Update the map with every add, move, rename, repurpose, split, consolidation, or removal. Folder summaries may aid navigation but never replace literal entries. Add ownership, dependency, security, generation, or lifecycle notes where useful. The required completeness check compares tracked paths with the map and fails for undocumented or nonexistent paths.
+Update the map with every add, move, rename, repurpose, split, consolidation, or removal. Folder summaries may aid navigation but never replace literal entries. Add ownership, dependency, security, generation, or lifecycle notes where useful.
 
 When the map is too large to load safely with the task context, read its directory and ownership summary plus entries for relevant paths and dependencies; rely on the completeness check for the full inventory. Read the entire map only for repository-wide mapping or architecture work. The map is exempt from the 300/500-line rule.
 
@@ -218,7 +225,7 @@ Apply the 300/500 rule to handwritten source-owned code, tests, scripts, and sty
 
 Generated code, third-party dependencies, compiled assets, lockfiles, documentation, and authored static catalogues are excluded. A cohesive migration, fixture, configuration file, dataset, or algorithm may receive an exact-path exception when splitting would reduce safety or clarity. Split by responsibility, ownership, lifecycle, or dependency—not arbitrary counts. Keep entry points and page composition especially small and tests organized by behavior.
 
-An unrelated pre-existing violation does not block a bounded change that does not touch or depend on it; report it and follow the project's remediation plan. Automate enforcement and report the largest relevant handwritten files during broad closeout or publication. Comment non-obvious intent, invariants, security, integrations, concurrency, and surprising branches—not self-evident syntax.
+Section 29 owns automated counting and failure; this section owns the design response and exception decision. An unrelated pre-existing violation does not block a bounded change that does not touch or depend on it; report it and follow the project's remediation plan. Report the largest relevant handwritten files during broad closeout or publication. Comment non-obvious intent, invariants, security, integrations, concurrency, and surprising branches—not self-evident syntax.
 
 ## 13. Vertical Slices And Cross-Cutting Quality
 
