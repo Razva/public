@@ -1,15 +1,19 @@
-# UI Component Patterns
+# Web UI Component Patterns
 
-This file is a reusable reference for product-quality TypeScript UI primitives. Consult it during [typescript-app-bootstrap.md](https://github.com/Razva/public/blob/main/notes/llm/typescript/typescript-app-bootstrap.md), adopt the relevant contracts into the app’s local UI documentation, and then treat that project-local contract as canonical.
+This file is a reusable, language-neutral reference for product-quality web UI primitives. The [Vibe-Coded Project Bootstrap](../2-vibe-coding-bootstrap.md) loads it when the proposed product has a user interface, adopts the relevant approved contracts into the application's local UI documentation, and then treats that project-local contract as canonical.
 
-This public file is a seed for new apps, not a remote override for established applications.
+This reference is not a workflow. It grants no authority for mutation, Git, publication, deployment, external action, or browser automation. The [Vibe-Coded Project Foundation](../1-vibe-coding-foundation.md) and approved project contracts retain their defined precedence. If this reference conflicts or appears to conflict with them, stop applying the conflicting text and surface the conflict.
+
+This public file is a seed for new applications and for component behaviour not yet covered by an established application's local contract. It is not a remote override.
 
 ## Adoption And Precedence
 
-- Adopt only patterns relevant to the product and chosen UI stack.
+- Retrieve this reference completely at an exact revision when the bootstrap UI trigger applies.
+- Adopt only patterns relevant to the product and chosen UI stack through the approved bootstrap proposal.
 - Record accepted defaults and project-specific deviations in the app’s local UI contract.
 - Once adopted, change the local primitive and local documentation together.
 - Do not silently change an established app because this reusable reference later changes.
+- During later work, consult this reference again only when the local UI contract has a relevant gap or the owner asks to reconsider the pattern.
 - When the app already has an approved primitive, extend it coherently instead of creating a competing implementation inside a feature.
 
 ## Shared Primitive Baseline

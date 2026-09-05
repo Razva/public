@@ -13,6 +13,20 @@ When using one of the four prompt files, copy and paste the complete file. Do no
 | [3 — Session closeout](3-vibe-coding-session-closeout.md) | Saves the current state in the project repositories and publishes eligible work. | Paste it into the current session before changing sessions. It is optional but recommended. |
 | [4 — Continuation](4-vibe-coding-continuation.md) | Loads the rules and current project state for a later session. | Paste it at the start of every later session, together with your new request. |
 
+## Conditional References
+
+The four prompt files are the only project workflow. Reusable technology and UI files are conditional references, not parallel workflows, and grant no mutation, Git, publication, deployment, external-action, or server-administration authority.
+
+During bootstrap, File 2 loads a relevant reference when the proposed product surface or technology triggers it. The approved project-specific result is then recorded in the application's canonical documentation. Later sessions use those local contracts; they consult a reusable reference again only when the local contract has a relevant gap or the owner asks to reconsider it.
+
+| Reference | Load when |
+| --- | --- |
+| [Web UI Component Patterns](references/web-ui-component-patterns.md) | The product has a user interface and reusable component behaviour is relevant. |
+| [TypeScript Project Profile](../typescript/typescript-project-profile.md) | TypeScript is required, detected, or a credible candidate for the approved stack. |
+| [Next.js Project Profile](../typescript/nextjs-project-profile.md) | Next.js is required, detected, or a credible candidate for the approved stack. |
+
+The foundation and approved project contracts always retain their defined precedence. If a reference conflicts or appears to conflict with them, the agent must surface the conflict and stop applying the conflicting reference text.
+
 ## First Session
 
 ```text

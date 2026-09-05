@@ -1,6 +1,8 @@
-# TypeScript Development Server Operations
+# Node And TypeScript Development Server Operations
 
-Use this runbook for recurring maintenance and monitoring after [typescript-server-setup.md](https://github.com/Razva/public/blob/main/notes/llm/typescript/typescript-server-setup.md) is complete. It is not part of one-shot server or app bootstrap.
+Use this runbook for recurring maintenance and monitoring after [Node And TypeScript Development Server Setup](node-typescript-server-setup.md) is complete. It is not part of the Vibe-Coding project workflow.
+
+This runbook grants no inspection, mutation, restart, installation, or administrator authority. Apply the [Vibe-Coded Project Foundation](../vibe-coding/1-vibe-coding-foundation.md), the application's canonical operations contract, and the owner's current authorization before executing commands.
 
 App-specific service names, paths, ports, environment variables, restart procedures, and cache behavior belong in each app’s public operations documentation.
 

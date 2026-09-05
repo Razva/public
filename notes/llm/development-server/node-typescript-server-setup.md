@@ -1,8 +1,10 @@
-# TypeScript Development Server Setup
+# Node And TypeScript Development Server Setup
 
 Use this file once when provisioning a development server or when adding a new project user. It prepares reusable machine- and user-level capabilities; it does not create an application.
 
-After the server is ready, use [typescript-app-bootstrap.md](https://github.com/Razva/public/blob/main/notes/llm/typescript/typescript-app-bootstrap.md) once for each new app. Use [typescript-server-operations.md](https://github.com/Razva/public/blob/main/notes/llm/typescript/typescript-server-operations.md) for recurring maintenance and monitoring.
+This is an infrastructure runbook, not an application workflow, and it grants no authority to execute its commands. Apply the [Vibe-Coded Project Foundation](../vibe-coding/1-vibe-coding-foundation.md), obtain the authority required for each machine or user mutation, and preserve the foundation's security, operational, and completion requirements.
+
+After the server is ready, use the [Vibe-Coding Project Prompts](../vibe-coding/README.md) for each new application. The bootstrap loads the [TypeScript Profile Index](../typescript/README.md) when TypeScript is applicable. Use [Node And TypeScript Development Server Operations](node-typescript-server-operations.md) for recurring maintenance and monitoring.
 
 ## Lifecycle Boundary
 
@@ -225,10 +227,10 @@ Use `/plugins` in Codex CLI or the current Codex plugin settings UI to browse, i
 
 ## Optional Browser Capability (Playwright)
 
-Change into the parent folder of your project directory (e.g.: `/home/<user>/<project-workdir>`) and install  `playwright`:
+Change into the project directory and install the verified project version of `@playwright/test` only when browser automation is part of the approved project verification contract:
 
 ```bash
-npm install --save-dev --save-exact @playwright/test@latest &&
+npm install --save-dev --save-exact @playwright/test@<verified-version> &&
 npx playwright install chromium &&
 npx playwright --version
 ```
@@ -295,4 +297,4 @@ The server is ready for app bootstrap when:
 - Codex is installed and authenticated, if it will be used;
 - user-level systemd and linger work, if the app will use a persistent user service.
 
-Record any intentionally unavailable optional capability. Then continue with [typescript-app-bootstrap.md](https://github.com/Razva/public/blob/main/notes/llm/typescript/typescript-app-bootstrap.md); do not repeat machine provisioning inside the app workflow.
+Record any intentionally unavailable optional capability. Then continue with the [Vibe-Coded Project Foundation](../vibe-coding/1-vibe-coding-foundation.md) and [Vibe-Coded Project Bootstrap](../vibe-coding/2-vibe-coding-bootstrap.md); do not repeat machine provisioning inside the application workflow.

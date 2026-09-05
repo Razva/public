@@ -122,6 +122,8 @@ Identify required browser, mobile, desktop, API, command-line, embedded, or docu
 
 Classify visual material as evidence or approved direction. It cannot silently determine architecture, data ownership, routes, or source structure.
 
+When the product includes a user interface, retrieve the complete canonical [Web UI Component Patterns](https://github.com/Razva/public/blob/main/notes/llm/vibe-coding/references/web-ui-component-patterns.md) reference at an exact revision. Treat it as a non-authoritative seed under the foundation: it grants no permission, cannot weaken a foundation requirement, and cannot override an established project contract. Select only patterns relevant to the proposed product and stack, identify deviations, and include their proposed local ownership in the pre-scaffold proposal. After approval, record the adopted behaviour in the application's canonical `docs/ui/` contract; later sessions use that local contract rather than silently inheriting future reference changes.
+
 ## 9. Establish Delivery And Operations
 
 Collect the first deployment target and owner; available runtime, data, storage, network, and managed services; environments; deployment/process/service shape; configuration and secrets; backup/restore/recovery/monitoring/support; deadlines, team capacity, maintenance owner/horizon; cost, license, vendor, residency, and portability limits; and restrictions on containers, processes, workers, or infrastructure.
@@ -135,6 +137,10 @@ Ask for hard constraints, relevant experience, strong preferences, prohibited ch
 Evaluate the smallest credible combinations of language, runtime, framework, interface technology, data store, persistence, package tooling, testing, build tooling, and deployment. Apply the foundation's version, dependency, and rights rules. Record verified versions, date, sources, compatibility, and license consequences.
 
 Recommend one baseline for this product. Show alternatives only for consequential trade-offs. Identify optional components, rejected infrastructure, and future gates.
+
+Reusable technology profiles are conditional technical references, never additional workflows. When a technology is required by an owner constraint, detected in preserved project material, or becomes a credible candidate for the recommended baseline, inspect the maintained profile index and retrieve each matching canonical profile completely at an exact revision before finalizing the recommendation. For TypeScript-related work, begin with the [TypeScript Profile Index](https://github.com/Razva/public/blob/main/notes/llm/typescript/README.md); load its Next.js profile only when Next.js is independently applicable.
+
+A profile may refine stack-specific recommendations but must not replace or reproduce Files 1–4, grant authority, change lifecycle state, weaken verification, mark foundation rules inapplicable, or override an approved project contract. Surface any actual or possible conflict and stop applying the conflicting profile text. Include the selected profile identities, revisions, proposed adoptions, and deviations in the pre-scaffold proposal. After approval, write the accepted project-specific contract into the application repository. Do not make later sessions reload a reusable profile for ordinary work when the local contract answers the question.
 
 ## 11. Define The Project Working And Verification Contract
 
@@ -158,7 +164,8 @@ Present one consolidated proposal containing:
 8. top-level modules, dependency direction, and first data-model direction;
 9. canonical documents, verification automation, and lifecycle-validation method;
 10. exact non-product scaffold deliverables and excluded product work;
-11. assumptions, risks, blockers, deferred decisions, and gates.
+11. selected conditional references, their exact revisions, proposed adoptions, and deviations;
+12. assumptions, risks, blockers, deferred decisions, and gates.
 
 Distinguish owner facts, verified facts, recommendations, assumptions, questions, and proposed decisions. The owner may approve the complete enumerated proposal in one statement; unresolved alternatives still need answers. Revise when an answer changes downstream choices.
 
@@ -170,7 +177,7 @@ After approval, verify repository identity/paths, GitHub access/visibility, requ
 
 ## 14. Create The Approved Non-Product Scaffold
 
-Execute only approved deliverables. Preserve partial-project material, compare generator output with the proposal, and deliberately retain or remove defaults. Create the canonical documentation, master plan, exhaustive generated-and-authored codebase map, private memory, initial modules, and project verification entry point. Validate lifecycle JSON with a real JSON parser and this file's schema; no product component may own that workflow state.
+Execute only approved deliverables. Preserve partial-project material, compare generator output with the proposal, and deliberately retain or remove defaults. Create the canonical documentation, master plan, exhaustive generated-and-authored codebase map, private memory, initial modules, and project verification entry point. Write approved technology and UI choices into their owning project-local contracts without copying reusable reference files wholesale or creating a second workflow. Validate lifecycle JSON with a real JSON parser and this file's schema; no product component may own that workflow state.
 
 Set the designated memory writer and active mutation boundary in current context. Do not implement the first functional slice or add accidental product behavior.
 
