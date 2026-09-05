@@ -15,15 +15,13 @@ The desired behavior is simple:
 ## Live Demos
 
 - [HTML Demo](https://razva.github.io/public/notes/ui/dropdowns/demo/html/)
-- [React Demo](https://razva.github.io/public/notes/ui/dropdowns/demo/tsx/)
 
-Both demos use the same shared CSS contract: [`demo/shared/dropdown-demo.css`](demo/shared/dropdown-demo.css).
+The demo uses the Tailwind CSS contract in [`demo/html/dropdown-demo.css`](demo/html/dropdown-demo.css).
 
 Source links:
 
-- [Shared Tailwind dropdown CSS](https://github.com/Razva/public/blob/main/notes/ui/dropdowns/demo/shared/dropdown-demo.css)
+- [Tailwind dropdown CSS](https://github.com/Razva/public/blob/main/notes/ui/dropdowns/demo/html/dropdown-demo.css)
 - [HTML Source](https://github.com/Razva/public/tree/main/notes/ui/dropdowns/demo/html)
-- [React Source](https://github.com/Razva/public/tree/main/notes/ui/dropdowns/demo/tsx)
 
 ## Features
 
@@ -100,24 +98,11 @@ The HTML demo is for understanding DOM behavior, not for recommending a producti
 
 It uses:
 
-- the shared Tailwind CSS source from `demo/shared/dropdown-demo.css`;
+- the Tailwind CSS source beside the HTML demo at `demo/html/dropdown-demo.css`;
 - a separate JavaScript file for dropdown behavior;
 - a separate SVG sprite for icons.
 
 The HTML demo loads Tailwind in the browser so the same Tailwind-authored CSS contract can be used without a build step.
-
-## React/TSX Demo Notes
-
-The React/Tailwind TSX demo uses the same shared CSS source as the HTML demo.
-
-React owns:
-
-- open/closed state;
-- selected value;
-- search query;
-- keyboard-active index.
-
-The Vite output in `dist` is runtime build output only. It is not the source of truth for the visual contract.
 
 ## Production Guidance
 
@@ -155,4 +140,4 @@ The dropdown passes when:
 - the menu has no unexplained empty strip;
 - option hover and keyboard-active states cover the intended row area;
 - the selected check appears next to the selected label;
-- HTML and TSX demos look equivalent.
+- filtering, keyboard navigation, selection, and closing behavior work in the HTML demo.

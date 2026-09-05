@@ -10,7 +10,7 @@ await loadTailwind();
 initDropdown(document.querySelector("[data-dropdown]"));
 
 async function loadTailwind() {
-  const css = await fetch("../shared/dropdown-demo.css").then((response) => response.text());
+  const css = await fetch("dropdown-demo.css").then((response) => response.text());
   const style = document.createElement("style");
   style.type = "text/tailwindcss";
   style.textContent = css;

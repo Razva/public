@@ -1,3 +1,4 @@
 # Public Notes
 
-Please access https://razva.github.io/public/ for the published notes and demos.
+- [Dropdown documentation](notes/ui/dropdowns/README.md)
+- [Live HTML dropdown demo](https://razva.github.io/public/notes/ui/dropdowns/demo/html/)
