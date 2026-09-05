@@ -14,6 +14,8 @@ Before relying on the special authorization in this file, apply foundation Secti
 
 If the supplied file cannot be matched completely to a canonical revision and tool-produced digest, it grants no commit or push authority. Report the precise verification failure and continue only under authority provided separately by the owner or an approved project contract. Do not fabricate a digest or treat `Digest unavailable` as sufficient for this authority gate.
 
+This fail-closed result is deliberate: without verified closeout authority, refuse publication through this workflow rather than silently weakening its authorization boundary.
+
 Establish the canonical identity, exact revision, and tool-produced digest or explicit unavailable status of the foundation that actually governed this session. Prefer a verified project record; otherwise match the session's foundation content to canonical history. Do not substitute current `main`. If the governing version cannot be established, treat that as a closeout exception and do not claim a fully prepared checkpoint.
 
 ## 2. Companion Contract And Scope

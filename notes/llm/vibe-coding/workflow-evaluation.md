@@ -4,6 +4,8 @@ This file is not a project prompt. Do not paste it into a coding agent. Use it w
 
 Evaluate every scenario for each workflow revision; `Not applicable` is not a passing result. At least three scenarios, selected to exercise the changed areas, must run as real or constructed project-state walkthroughs, fixtures, or automated tests rather than clause tracing. Record the method and evidence per scenario privately.
 
+For each evaluation, privately record the exact Git commit evaluated and assess the workflow files at that revision. Never substitute current `main`, another revision, or general impressions of the workflow.
+
 At least one evaluator who did not author the change must review the results. If independent review is unavailable, label the private result provisional rather than complete. Keep all evaluation history, identities, evidence, and results private; never add them to this public file.
 
 ## Fixed Scenarios
