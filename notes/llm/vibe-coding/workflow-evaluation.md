@@ -10,7 +10,7 @@ At least one evaluator who did not author the change must review the results. Un
 
 ## Current Evaluation Status
 
-- **Workflow revision:** `cbd5995f798cd18a32de92cd7ea70782bcb19742`
+- **Workflow revision:** `1d8ff532be72232466a347218bbd46f125d15303`
 - **Evaluation date:** Pending
 - **Result:** Pending
 - **Independent review:** No
