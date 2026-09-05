@@ -14,14 +14,14 @@ The desired behavior is simple:
 
 ## Live Demos
 
-- [HTML Demo](https://razva.github.io/public/notes/ui/dropdowns/demo/html/)
+- [HTML Demo](https://razva.github.io/public/notes/ui/dropdowns/demo/)
 
-The demo uses the Tailwind CSS contract in [`demo/html/dropdown-demo.css`](demo/html/dropdown-demo.css).
+The demo uses the Tailwind CSS contract in [`demo/dropdown-demo.css`](demo/dropdown-demo.css).
 
 Source links:
 
-- [Tailwind dropdown CSS](https://github.com/Razva/public/blob/main/notes/ui/dropdowns/demo/html/dropdown-demo.css)
-- [HTML Source](https://github.com/Razva/public/tree/main/notes/ui/dropdowns/demo/html)
+- [Tailwind dropdown CSS](https://github.com/Razva/public/blob/main/notes/ui/dropdowns/demo/dropdown-demo.css)
+- [HTML Source](https://github.com/Razva/public/tree/main/notes/ui/dropdowns/demo)
 
 ## Features
 
@@ -98,7 +98,7 @@ The HTML demo is for understanding DOM behavior, not for recommending a producti
 
 It uses:
 
-- the Tailwind CSS source beside the HTML demo at `demo/html/dropdown-demo.css`;
+- the Tailwind CSS source beside the HTML demo at `demo/dropdown-demo.css`;
 - a separate JavaScript file for dropdown behavior;
 - a separate SVG sprite for icons.
 
