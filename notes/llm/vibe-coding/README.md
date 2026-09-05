@@ -4,14 +4,14 @@ These files help an AI coding agent start, build, and continue an application sa
 
 This README is for people. Do not paste it into the coding agent.
 
-When using one of the four prompt files, copy and paste the complete file. Do not copy only one section.
+Use one of the four copy/paste prompts below. Each prompt names the canonical workflow and instructs the agent to retrieve it completely from GitHub. If the agent cannot retrieve the canonical file, use the manual fallback below; never paste only one section.
 
 | File | Purpose | When to use it |
 | --- | --- | --- |
-| [1 — Foundation](1-vibe-coding-foundation.md) | The rules used throughout the project. The agent loads the parts relevant to each task. | Paste it once at the start of a new project. |
-| [2 — Bootstrap](2-vibe-coding-bootstrap.md) | Collects project details and creates the initial structure. It does not build the first feature. | Paste it after File 1. Use it only once per project. |
-| [3 — Session closeout](3-vibe-coding-session-closeout.md) | Saves the current state in the project repositories and publishes eligible work. | Paste it into the current session before changing sessions. It is optional but recommended. |
-| [4 — Continuation](4-vibe-coding-continuation.md) | Loads the rules and current project state for a later session. | Paste it at the start of every later session, together with your new request. |
+| [1 — Foundation](1-vibe-coding-foundation.md) | The rules used throughout the project. The agent loads the parts relevant to each task. | Use Prompt 1 once at the start of a new project conversation. |
+| [2 — Bootstrap](2-vibe-coding-bootstrap.md) | Collects project details and creates the initial structure. It does not build the first feature. | Use Prompt 2 after File 1 is active. Use it only once per project. |
+| [3 — Session closeout](3-vibe-coding-session-closeout.md) | Saves the current state in the project repositories and publishes eligible work. | Optionally use Prompt 3 in the current session before changing sessions. |
+| [4 — Continuation](4-vibe-coding-continuation.md) | Loads the rules and current project state for a later session. | Use Prompt 4 at the start of every later session, together with your new request. |
 
 ## Conditional References
 
@@ -32,36 +32,44 @@ This table mirrors reference availability for human discovery. File 2 remains th
 
 The [server guidance](server/README.md) is not a fifth workflow file or a mandatory Step 0. Use its setup reference only when deliberately preparing a self-managed development server or when File 2 finds a missing approved readiness capability. Use its operations reference only for applicable, authorized recurring server work. Application-specific setup and operations remain in the application's own documentation.
 
-## How To Start The Agent
+## Four Copy/Paste Prompts
 
-The workflow file defines how the agent must work, but it does not automatically tell the agent to begin. Paste the corresponding invocation text immediately above the complete file.
+Do not paste this entire README into the agent. Copy only the prompt that matches the action you want to take.
 
-Do not paste only the invocation. The complete workflow file must follow it in the same message.
+### Prompt 1 — Load The Foundation
 
-### First Session — Step 1: Load The Foundation
-
-Copy this text, then paste the complete contents of File 1 immediately below it:
+Use this once at the start of a new project conversation:
 
 ```text
-Load and apply the complete Vibe-Coded Project Foundation below as the governing workflow for this project.
+Retrieve and apply the complete canonical Vibe-Coded Project Foundation from:
 
-This is an invocation of the workflow, not a request to review, summarize, explain, or merely remember it. Read and verify it completely as required by its loading contract.
+https://github.com/Razva/public/blob/main/notes/llm/vibe-coding/1-vibe-coding-foundation.md
 
-Do not begin project discovery or implementation yet. When the foundation is active, respond briefly that you are ready for File 2.
+Treat this message as my explicit invocation of that workflow, not as a request to review, summarize, explain, or merely remember it.
 
-The complete foundation begins below:
+Resolve the URL's main branch to an exact Git commit, retrieve the complete canonical file with an appropriate tool, verify it as required by its loading contract, and apply it as the governing workflow for this project.
+
+Do not begin project discovery or implementation yet. When the Foundation is active, respond briefly that you are ready for File 2. If the file cannot be retrieved completely at an exact revision, report the exact failure and do not claim that the Foundation is active.
 ```
 
 File 1 deliberately establishes the working rules without starting the project. A short readiness confirmation is the expected result.
 
-### First Session — Step 2: Execute Bootstrap
+### Prompt 2 — Execute Bootstrap
 
-After the agent confirms that File 1 is active, copy this text and paste the complete contents of File 2 immediately below it:
+Use this after File 1 is already active in the same conversation. This remains valid when File 1 was loaded on an earlier date, provided the conversation and its verified context have continued:
 
 ```text
-The Vibe-Coded Project Foundation is active. Now invoke and execute the complete Vibe-Coded Project Bootstrap below for this project.
+The Vibe-Coded Project Foundation is already active in this conversation.
 
-This is an instruction to begin the bootstrap now, not a request to review, summarize, explain, or memorize the workflow.
+Retrieve and execute the complete canonical Vibe-Coded Project Bootstrap from:
+
+https://github.com/Razva/public/blob/main/notes/llm/vibe-coding/2-vibe-coding-bootstrap.md
+
+Treat this message as my explicit invocation of that workflow and an instruction to begin bootstrap now, not as a request to review, summarize, explain, or memorize it.
+
+Verify the active Foundation's canonical identity, exact revision, and recorded digest or unavailable status without silently replacing it with the current Foundation. Resolve the Bootstrap URL's main branch to an exact Git commit, retrieve and verify the complete canonical file, and then execute it.
+
+If the Foundation is not already active and verifiable in this conversation, stop and tell me to use Prompt 1. If bootstrap was already retired for this project, do not apply File 2 again; tell me to use Prompt 4.
 
 In this response, verify the supplied workflows, inspect all available repositories and project material, classify the starting state, and begin adaptive discovery. Do not ask for information that can be obtained from existing evidence.
 
@@ -70,51 +78,57 @@ Ask only the next small set of questions that materially blocks progress. Contin
 Initial project context:
 
 [Briefly describe what you want to build, known constraints, existing repositories or files, and decisions already made.]
-
-The complete bootstrap workflow begins below:
 ```
 
 File 2 drives the first session. The agent should take the next permitted bootstrap action rather than merely acknowledge the workflow.
 
 After you approve and complete bootstrap, continue working in the same conversation. Do not use File 4 inside the original bootstrap conversation.
 
-### Before Leaving A Session — Optional Closeout
+### Prompt 3 — Close The Current Session
 
-Copy this text, then paste the complete contents of File 3 immediately below it:
+Use this in the current project conversation before deliberately changing sessions. It is optional but recommended:
 
 ```text
-Invoke and execute the complete Vibe-Coded Project Session Closeout below now.
+Retrieve and execute the complete canonical Vibe-Coded Project Session Closeout from:
 
-This is an instruction to perform the closeout, not to review, summarize, explain, or memorize it.
+https://github.com/Razva/public/blob/main/notes/llm/vibe-coding/3-vibe-coding-session-closeout.md
+
+Treat this message as my explicit invocation of that workflow and an instruction to perform the closeout now, not as a request to review, summarize, explain, or memorize it.
+
+Resolve the URL's main branch to an exact Git commit, retrieve the complete canonical file with an appropriate tool, verify its identity, revision, exact bytes, digest, and authority as required, and then execute it.
 
 Establish the true stopping state, run the required verification, persist the permitted checkpoint, and complete every publication action authorized by the workflow. If an authority or verification gate prevents an action, preserve the work and report the exact blocker and required next action.
-
-The complete closeout workflow begins below:
 ```
 
 File 3 is optional but recommended. It may correctly refuse to commit or push when its authority cannot be verified.
 
-### Later Sessions — Continue The Project
+### Prompt 4 — Continue The Project
 
-Copy this text, add your current request, and then paste the complete contents of File 4 immediately below it:
+Use this at the beginning of every later project conversation:
 
 ```text
-Invoke and execute the complete Vibe-Coded Project Continuation workflow below for this project.
+Retrieve and execute the complete canonical Vibe-Coded Project Continuation workflow from:
 
-This is an instruction to resume project work, not to review, summarize, explain, or memorize the workflow.
+https://github.com/Razva/public/blob/main/notes/llm/vibe-coding/4-vibe-coding-continuation.md
+
+Treat this message as my explicit invocation of that workflow and an instruction to resume project work, not as a request to review, summarize, explain, or memorize it.
+
+Resolve the URL's main branch to an exact Git commit, retrieve and verify the complete canonical file with an appropriate tool, and then execute it together with my current request.
 
 Verify and load the required project state, route the bootstrap lifecycle, apply the relevant foundation rules, and then perform the current request in this same response whenever it is concrete and unblocked.
 
 Current request:
 
 [Describe the work you want completed in this session.]
-
-The complete continuation workflow begins below:
 ```
 
 For later sessions, paste only File 4 and the current request. Do not paste Files 1 or 2 again: File 4 retrieves the foundation and, when necessary, the exact recorded bootstrap revision.
 
 File 4 can recover when the previous session ended without a closeout.
+
+### Manual Fallback
+
+If the agent cannot retrieve a named workflow completely from GitHub, open the linked file, copy it from its title through its final sentence, and paste the complete contents after the same launcher in the same conversation. The agent must still resolve and verify the supplied bytes against an exact canonical revision. Do not use an excerpt or remembered copy. Follow the same order and one-time-use rules described above.
 
 ## Maintaining These Files
 
