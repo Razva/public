@@ -24,10 +24,10 @@ At least one evaluator who did not author the change must review the results. Un
 ## Current Evaluation Status
 
 - **Workflow revision:** `54abc80b714c73be149bc0117a7c5c34fe82dafa`
-- **Evaluation date:** Pending
-- **Result:** Pending
-- **Independent review:** No
-- **Status:** Pending independent review
+- **Evaluation date:** 2026-09-05
+- **Result:** 21 of 21 fixed scenarios passed; 5 run as project-state walkthroughs or fixtures; 12 of 12 adversarial validator cases rejected; 1 open correctness defect in a conditional reference
+- **Independent review:** Yes
+- **Status:** Provisional
 
 ## Fixed Scenarios
 
