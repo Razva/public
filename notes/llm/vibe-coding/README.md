@@ -32,27 +32,89 @@ This table mirrors reference availability for human discovery. File 2 remains th
 
 The [server guidance](server/README.md) is not a fifth workflow file or a mandatory Step 0. Use its setup reference only when deliberately preparing a self-managed development server or when File 2 finds a missing approved readiness capability. Use its operations reference only for applicable, authorized recurring server work. Application-specific setup and operations remain in the application's own documentation.
 
-## First Session
+## How To Start The Agent
+
+The workflow file defines how the agent must work, but it does not automatically tell the agent to begin. Paste the corresponding invocation text immediately above the complete file.
+
+Do not paste only the invocation. The complete workflow file must follow it in the same message.
+
+### First Session — Step 1: Load The Foundation
+
+Copy this text, then paste the complete contents of File 1 immediately below it:
 
 ```text
-File 1 → File 2 → continue working → optionally use File 3 before leaving
+Load and apply the complete Vibe-Coded Project Foundation below as the governing workflow for this project.
+
+This is an invocation of the workflow, not a request to review, summarize, explain, or merely remember it. Read and verify it completely as required by its loading contract.
+
+Do not begin project discovery or implementation yet. When the foundation is active, respond briefly that you are ready for File 2.
+
+The complete foundation begins below:
 ```
 
-After bootstrap is approved, you may continue working in the same session. Do not use File 4 until you start a later session.
+File 1 deliberately establishes the working rules without starting the project. A short readiness confirmation is the expected result.
 
-## Later Sessions
+### First Session — Step 2: Execute Bootstrap
+
+After the agent confirms that File 1 is active, copy this text and paste the complete contents of File 2 immediately below it:
 
 ```text
-File 4 + your request → continue working → optionally use File 3 before leaving
+The Vibe-Coded Project Foundation is active. Now invoke and execute the complete Vibe-Coded Project Bootstrap below for this project.
+
+This is an instruction to begin the bootstrap now, not a request to review, summarize, explain, or memorize the workflow.
+
+In this response, verify the supplied workflows, inspect all available repositories and project material, classify the starting state, and begin adaptive discovery. Do not ask for information that can be obtained from existing evidence.
+
+Ask only the next small set of questions that materially blocks progress. Continue through discovery and preparation of the pre-scaffold proposal, but do not scaffold, install dependencies, initialize repositories, or implement product behaviour until the workflow requires my explicit approval and I provide it.
+
+Initial project context:
+
+[Briefly describe what you want to build, known constraints, existing repositories or files, and decisions already made.]
+
+The complete bootstrap workflow begins below:
 ```
 
-Paste only File 4 and your request. You do not need to paste File 1 again because File 4 loads it.
+File 2 drives the first session. The agent should take the next permitted bootstrap action rather than merely acknowledge the workflow.
 
-Never paste File 2 again. If bootstrap is still unfinished, File 4 finds the saved bootstrap version and resumes it.
+After you approve and complete bootstrap, continue working in the same conversation. Do not use File 4 inside the original bootstrap conversation.
 
-File 3 is not required. File 4 can recover when the previous session ended without a closeout.
+### Before Leaving A Session — Optional Closeout
 
-File 3 may deliberately refuse to commit or push when it cannot verify its canonical workflow or the required repository authority. Resolve the reported problem or give separate explicit permission for the specific action; do not assume the closeout succeeded.
+Copy this text, then paste the complete contents of File 3 immediately below it:
+
+```text
+Invoke and execute the complete Vibe-Coded Project Session Closeout below now.
+
+This is an instruction to perform the closeout, not to review, summarize, explain, or memorize it.
+
+Establish the true stopping state, run the required verification, persist the permitted checkpoint, and complete every publication action authorized by the workflow. If an authority or verification gate prevents an action, preserve the work and report the exact blocker and required next action.
+
+The complete closeout workflow begins below:
+```
+
+File 3 is optional but recommended. It may correctly refuse to commit or push when its authority cannot be verified.
+
+### Later Sessions — Continue The Project
+
+Copy this text, add your current request, and then paste the complete contents of File 4 immediately below it:
+
+```text
+Invoke and execute the complete Vibe-Coded Project Continuation workflow below for this project.
+
+This is an instruction to resume project work, not to review, summarize, explain, or memorize the workflow.
+
+Verify and load the required project state, route the bootstrap lifecycle, apply the relevant foundation rules, and then perform the current request in this same response whenever it is concrete and unblocked.
+
+Current request:
+
+[Describe the work you want completed in this session.]
+
+The complete continuation workflow begins below:
+```
+
+For later sessions, paste only File 4 and the current request. Do not paste Files 1 or 2 again: File 4 retrieves the foundation and, when necessary, the exact recorded bootstrap revision.
+
+File 4 can recover when the previous session ended without a closeout.
 
 ## Maintaining These Files
 
