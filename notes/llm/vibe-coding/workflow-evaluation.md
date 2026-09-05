@@ -1,12 +1,20 @@
 # Workflow Evaluation For Maintainers
 
-This file is not a project prompt. Do not paste it into a coding agent. Use it when changing Files 1–4.
+This file is not a project prompt. Do not paste it into a project coding session. Use it when changing Files 1–4.
 
-Evaluate every scenario for each workflow revision; `Not applicable` is not a passing result. At least three scenarios, selected to exercise the changed areas, must run as real or constructed project-state walkthroughs, fixtures, or automated tests rather than clause tracing. Record the method and evidence per scenario privately.
+Evaluate every scenario for each workflow revision; `Not applicable` is not a passing result. At least three scenarios, selected to exercise the changed areas, must run as real or constructed project-state walkthroughs, fixtures, or automated tests rather than clause tracing. The working review must identify the method and evidence for each scenario, but retaining or publishing that detailed report is not required.
 
-For each evaluation, privately record the exact Git commit evaluated and assess the workflow files at that revision. Never substitute current `main`, another revision, or general impressions of the workflow.
+Assess Files 1–4 at one exact Git commit. Never substitute current `main`, another revision, or general impressions of the workflow. The status block below records only the latest completed evaluation; replace it instead of appending history. A later change to any of Files 1–4 makes the recorded result outdated until that new workflow revision is evaluated.
 
-At least one evaluator who did not author the change must review the results. If independent review is unavailable, label the private result provisional rather than complete. Keep all evaluation history, identities, evidence, and results private; never add them to this public file.
+At least one evaluator who did not author the change must review the results. Until that happens, label the current result provisional rather than reviewed. Do not publish evaluator identity, detailed evidence, discussion history, or past results in this file.
+
+## Current Evaluation Status
+
+- **Workflow revision:** Pending
+- **Evaluation date:** Pending
+- **Result:** Pending
+- **Independent review:** No
+- **Status:** Pending independent review
 
 ## Fixed Scenarios
 

@@ -33,4 +33,6 @@ Never paste File 2 again. If bootstrap is still unfinished, File 4 finds the sav
 
 File 3 is not required. File 4 can recover when the previous session ended without a closeout.
 
+File 3 may deliberately refuse to commit or push when it cannot verify its canonical workflow or the required repository authority. Resolve the reported problem or give separate explicit permission for the specific action; do not assume the closeout succeeded.
+
 If you change these prompt files, use the fixed [maintainer evaluation](workflow-evaluation.md). It is not a prompt and should never be pasted into a project session.

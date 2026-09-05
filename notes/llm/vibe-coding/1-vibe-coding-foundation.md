@@ -44,7 +44,7 @@ Use this conservative router:
 | Request fan-out, payload size, latency, pagination, cancellation, timeouts, or backpressure may change | Section 25 |
 | Cached, memoized, persisted-local, stale, refreshed, or offline data is introduced or changed | Section 26 |
 | Scheduled, queued, retried, polled, asynchronous, or background work is introduced or changed | Section 27 |
-| Tests change, a shared consumer is affected, or a behavioral claim requires proof | Section 28 |
+| Tests change; a shared interface, exported API, route, schema, event, or reusable component changes; or a behavioral claim requires proof | Section 28 |
 | A local commit is contemplated | Section 30 |
 | A remote push is contemplated | Section 31 |
 | A pull request or CI behavior is involved | Section 32 |

@@ -45,6 +45,8 @@ If multiple states remain possible, required owner approval cannot be proven, or
 
 An active state without a retrievable exact File 2 revision and verifiable stored digest cannot authorize resumed mutation. Never substitute the current File 2, a remembered copy, or a user-resupplied copy after its one-time use.
 
+When the exact immutable File 2 revision and its complete canonical content are established but no qualifying hashing tool is available, report the limitation and ask the owner whether to authorize the specific recorded bootstrap stage under that exact revision. Such approval waives only the missing-digest gate for that stage; it does not permit a different, current, remembered, or user-resupplied File 2, infer any product or proposal approval, repair ambiguous lifecycle evidence, or broaden bootstrap scope. Without that explicit approval, continue only safe read-only or unaffected work.
+
 ## 5. Route The Request And Manage Context
 
 For active bootstrap, reconcile the request with the recorded stage and continue only compatible bootstrap work. For retired, not-applicable, or verified legacy state, use the current request as the objective.
