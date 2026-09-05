@@ -8,7 +8,7 @@ When using one of the four prompt files, copy and paste the complete file. Do no
 
 | File | Purpose | When to use it |
 | --- | --- | --- |
-| [1 — Foundation](1-vibe-coding-foundation.md) | The rules used throughout the project. | Paste it once at the start of a new project. |
+| [1 — Foundation](1-vibe-coding-foundation.md) | The rules used throughout the project. The agent loads the parts relevant to each task. | Paste it once at the start of a new project. |
 | [2 — Bootstrap](2-vibe-coding-bootstrap.md) | Collects project details and creates the initial structure. It does not build the first feature. | Paste it after File 1. Use it only once per project. |
 | [3 — Session closeout](3-vibe-coding-session-closeout.md) | Saves the current state in the project repositories and publishes eligible work. | Paste it into the current session before changing sessions. It is optional but recommended. |
 | [4 — Continuation](4-vibe-coding-continuation.md) | Loads the rules and current project state for a later session. | Paste it at the start of every later session, together with your new request. |
@@ -32,3 +32,5 @@ Paste only File 4 and your request. You do not need to paste File 1 again becaus
 Never paste File 2 again. If bootstrap is still unfinished, File 4 finds the saved bootstrap version and resumes it.
 
 File 3 is not required. File 4 can recover when the previous session ended without a closeout.
+
+If you change these prompt files, use the fixed [maintainer evaluation](workflow-evaluation.md). It is not a prompt and should never be pasted into a project session.

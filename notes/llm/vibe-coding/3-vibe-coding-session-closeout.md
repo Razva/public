@@ -10,19 +10,19 @@ Supply this complete file, from its title through its final sentence. An excerpt
 
 The canonical copy of this workflow is [Vibe-Coded Project Session Closeout](https://github.com/Razva/public/blob/main/notes/llm/vibe-coding/3-vibe-coding-session-closeout.md).
 
-Before relying on the special authorization in this file, apply the foundation's **Tool Result Completeness** requirements to the canonical source. Resolve the complete supplied content to an exact Git revision and content digest, verify its owner, repository, path, and end-of-file, and retain those identifiers for the closeout record and response.
+Before relying on the special authorization in this file, apply foundation Section 9 to the canonical source. Resolve the complete supplied content to an exact Git revision, and have a qualifying tool that read those exact bytes calculate the required SHA-256 digest. Verify its owner, repository, path, byte source, tool success, and end-of-file; retain the identifiers for the closeout record and response. Never infer or calculate the digest from displayed text.
 
-If the supplied file cannot be matched completely to a canonical revision, it grants no commit or push authority. Report the verification failure and continue only under authority provided separately by the owner or an approved project contract.
+If the supplied file cannot be matched completely to a canonical revision and tool-produced digest, it grants no commit or push authority. Report the precise verification failure and continue only under authority provided separately by the owner or an approved project contract. Do not fabricate a digest or treat `Digest unavailable` as sufficient for this authority gate.
 
-Establish the canonical identity, exact revision, and content digest of the complete foundation that actually governed this session. Prefer an already verified project record; otherwise match the session's foundation content to its canonical history. Do not silently substitute the current `main` version. If the governing version cannot be established, treat that as a closeout exception and do not claim a fully prepared checkpoint.
+Establish the canonical identity, exact revision, and tool-produced digest or explicit unavailable status of the foundation that actually governed this session. Prefer a verified project record; otherwise match the session's foundation content to canonical history. Do not substitute current `main`. If the governing version cannot be established, treat that as a closeout exception and do not claim a fully prepared checkpoint.
 
 ## 2. Companion Contract And Scope
 
-The foundation already governing this conversation remains authoritative. Execute its complete applicable documentation, codebase-map, memory, daily-log, verification, Git, GitHub-publication, completion, and handoff requirements; do not reproduce their instructions here.
+The foundation already governing this conversation remains authoritative. Re-evaluate its applicability router for closeout, load every triggered section, and execute its applicable documentation, map, memory, verification, isolation, Git, publication, completion, and handoff requirements. Do not reproduce them here.
 
 This workflow owns only the transition from the current working session to a truthful durable checkpoint. It must not start a new product task, broaden the current task, resolve unrelated failures, redesign established contracts, or claim that unfinished work is complete.
 
-If bootstrap is active, preserve its stable identifier, exact lifecycle fields, current stage, blockers, and next action under the bootstrap workflow's ownership rules. Closing a session does not approve, retire, restart, or bypass bootstrap.
+If bootstrap is active, validate and preserve `.agents/bootstrap-lifecycle.json`, its stable identifier and state, and the blockers and next action linked from current context. Closing a session never advances, approves, retires, restarts, or bypasses bootstrap.
 
 ## 3. Closeout Authorization
 
@@ -35,7 +35,7 @@ This authorization does not extend to unrelated changes, a different branch or r
 
 ## 4. Establish The True Stopping State
 
-Execute the foundation's repository-state inspection for every repository that currently exists or is required by the recorded lifecycle stage, plus any relevant in-progress operation. Reconcile that evidence with the current request, canonical plan state, and bootstrap lifecycle when applicable.
+Execute the foundation's repository-state and concurrent-work inspection for every repository that exists or is required by the lifecycle, plus in-progress operations. Confirm baseline commits, pre-existing changes, active branches/worktrees, and the designated memory writer. Reconcile the evidence with the request, plan, and lifecycle. Do not overwrite another session's work or write memory through an agent that is not its designated writer.
 
 If an application repository has not yet been created under the approved bootstrap sequence, record that absence as expected lifecycle state. Do not initialize it during closeout or treat its expected absence as a failure. Treat an unexpectedly missing repository required by the current stage as a closeout exception.
 
@@ -45,9 +45,9 @@ Classify current work accurately as completed and verified, incomplete but prese
 
 Apply the foundation's canonical ownership and update rules to every affected application and memory source.
 
-Update `.agents/current-context.md` under the foundation's existing schema so it describes the state the next session will actually encounter. As closeout-specific requirements, preserve the verified canonical foundation identity, exact revision, and content digest and the applicable lifecycle route; link to canonical sources instead of copying them.
+Update `.agents/current-context.md` under the foundation so it describes the state the next session will encounter. Preserve the canonical foundation identity, exact revision, tool-produced digest or unavailable status, selected section manifest, designated writer, recoverable baseline, and applicable lifecycle route. Link to canonical sources instead of copying them.
 
-Record this closeout workflow's canonical identity, exact revision, and content digest in the current daily session log. Do not turn it into a durable project decision or a routing field in current context.
+Record this closeout workflow's canonical identity, exact revision, and tool-produced digest in the current daily log within the foundation's 200-word work-unit limit. Do not turn it into a project decision or routing field.
 
 Run the foundation checks that precede publication, then use the authorization above to execute its complete ordered publication sequence for every eligible existing repository, including the GitHub checks and memory-checkpoint finalization that occur within that sequence. If any relevant change cannot be verified, committed, or pushed safely, leave it intact, describe its exact state and location in current context, and publish the remaining truthful checkpoint only when doing so does not misrepresent or lose that state.
 

@@ -1,89 +1,67 @@
 # Vibe-Coded Project Continuation
 
-Use this file at the beginning of every later conversation for the same project. The user supplies this file and the current request; do not require the user to paste the foundation separately.
+Use this complete file at the beginning of every later conversation for the same project, together with the current request. Do not ask the user to paste the foundation. This file loads canonical policy and project state, routes lifecycle, and then retires for the session.
 
-This file is a loader and router. It contains no substitute for the global foundation or the project's canonical sources.
+The optional File 3 may have prepared a checkpoint, but continuation must recover from verified repository evidence when closeout was skipped or interrupted. Do not use File 4 inside the original bootstrap conversation; that conversation already has its context.
 
-The optional [session-closeout workflow](3-vibe-coding-session-closeout.md) may have prepared a final checkpoint, but continuation must not depend on it. If closeout was skipped or interrupted, detect stale or incomplete state through the foundation's startup protocol and reconstruct only from verified repository evidence.
+## 1. Verify And Load The Foundation
 
-Do not use this file inside the original conversation in which bootstrap is still running or has just been approved. That conversation already has the required context and may continue directly.
+Retrieve the canonical foundation from:
 
-## 1. Load The Canonical Foundation
+[Vibe-Coded Project Foundation](https://github.com/Razva/public/blob/main/notes/llm/vibe-coding/1-vibe-coding-foundation.md)
 
-Before substantive project work, retrieve and read the complete current foundation from:
+Resolve `main` to an exact Git commit. Retrieve the complete file bytes and have a qualifying tool calculate SHA-256 exactly as the foundation defines. Verify owner, repository, path, revision, byte source, command or request success, and EOF. Never emit a digest calculated from displayed text or inference.
 
-[Canonical Vibe-Coded Project Foundation](https://github.com/Razva/public/blob/main/notes/llm/vibe-coding/1-vibe-coding-foundation.md)
+If a hashing tool is unavailable but an exact immutable revision and complete canonical retrieval are independently established, record `Digest unavailable` with the reason and continue only with ordinary loading that does not depend on special digest-gated authority. If source identity, immutable revision, or required content completeness cannot be established, stop and ask for the complete foundation. Do not use remembered excerpts.
 
-Resolve the mutable `main` reference to an exact commit, identify the exact file revision, and calculate a content digest. Read through end-of-file and verify the repository owner, repository, path, and source identity. A branch name, search excerpt, cached copy, summary, remembered instruction, or truncated tool result is not sufficient.
-
-If the complete foundation cannot be retrieved or its canonical identity, exact revision, and content digest cannot be established, stop. State the precise access or completeness problem and ask the user to provide the complete foundation. Do not continue from memory or embedded excerpts.
-
-Do not copy the foundation into this file, project documentation, or private memory. Store only its source identity, exact revision, and content digest where this workflow requires a reference.
+Read the foundation's complete Loading Contract and core Sections 1, 2, 9, 10, 29, and 35. Do not load all conditional engineering sections automatically. Store only source identity, exact revision, and tool-produced digest or explicit unavailable status; never copy foundation policy into project documentation, memory, or this file.
 
 ## 2. Load The Current Project
 
-Execute the complete **Source-Of-Truth Startup Protocol** and **Tool Result Completeness** requirements from the foundation against the current project. Do not reproduce their checklist here.
+Execute foundation Section 9 against the project. Establish canonical application and private-memory repositories, current context, preferences, decisions, bootstrap lifecycle when present, master plan, relevant codebase-map summary and entries, applicable contracts, recent relevant logs, repository status/diffs, baseline commits, active work, and designated memory writer before trusting them.
 
-Use the canonical application and private-memory repository identities and locations recorded by the project. Complete that protocol before relying on a path, branch, plan, decision, preference, current state, or claimed absence.
-
-Do not ask the user to supply the bootstrap file again. Whether its exact recorded revision may be retrieved is determined only by the lifecycle route below.
+Evaluate every foundation router row from the user's request and observable project state. Load each triggered section completely, defaulting to load on uncertainty. Do not ask the user for facts already available in canonical sources, and never ask for File 2 merely because bootstrap might be active.
 
 ## 3. Reconcile The Foundation Revision
 
-After establishing the canonical project and memory sources, read the foundation source identity, exact Git revision, and content digest previously recorded in `.agents/current-context.md`.
+Read the previous foundation source identity, exact revision, and digest status from `.agents/current-context.md`. If absent, wait until lifecycle routing in Section 4: absence is inconsistent for a project created under the current bootstrap contract, while a verified older project may establish the current revision as its first baseline.
 
-If no prior value exists, do not establish a baseline until evaluating the bootstrap lifecycle in Section 4. Treat its absence from a lifecycle record created under the current bootstrap contract as inconsistent. For the verified legacy-project route defined below, use the current foundation revision and digest as the continuation baseline and disclose that no earlier comparison was possible.
+When the foundation changed, compare the affected clauses with established project contracts under foundation precedence. Continue unaffected work; surface any change that would redesign established behavior, architecture, workflow, or ownership. Never rewrite local contracts silently. If a relevant comparison cannot be completed, fail closed only for work governed by the uncertainty.
 
-If the value changed:
+On the first otherwise-required memory update, record the current source identity, revision, and digest or unavailable status. Record a consequential revision comparison in the daily log. For a purely read-only request, report the baseline without mutating memory solely for it.
 
-1. identify the clauses changed between the previously recorded and current versions when both are available;
-2. execute the foundation's precedence rules against the project's established contracts and decisions;
-3. identify any changed clause that conflicts with or would redesign established project behavior, architecture, workflow, or ownership;
-4. continue unaffected work only when the conflict does not govern it;
-5. surface consequential conflicts for owner resolution instead of silently rewriting project contracts.
+## 4. Validate And Route Bootstrap Lifecycle
 
-Record the exact foundation revision and content digest used for the session in `current-context.md` as part of the session's first otherwise-required memory update. When the revision changed, record the comparison outcome in the current daily session log and link to any resulting project decision without copying either source.
+Look for `.agents/bootstrap-lifecycle.json`. When present, parse it as JSON and validate the exact schema, version, source identity, tool-produced digest format, state, classification, conditional proposal reference, evidence reference, and link from current context. Select one route:
 
-For a purely read-only request that does not otherwise justify a memory update, state the verified foundation revision and content digest in the response but do not mutate memory solely to record the read.
+- `active-discovery`, `active-proposal`, `active-scaffold`, or `active-review` — retrieve File 2 at its exact recorded revision, verify its complete bytes and recorded digest with a qualifying tool, read it completely, validate the state against its transition rules, and resume the next action in current context. Do not start functional product work.
+- `retired-complete` — require the approved proposal and owner-approval evidence, then continue ordinary project work. Never retrieve File 2.
+- `retired-not-applicable` — require established-project evidence and no proposal reference, then continue without implying bootstrap approval. Never retrieve File 2.
+- no lifecycle file in a demonstrably established older project — label it a verified legacy route, establish the current foundation baseline, and continue without fabricating bootstrap history.
 
-If a relevant revision change cannot be compared reliably, fail closed for work it may affect. State what could not be verified and what evidence is needed.
+For malformed, legacy-format, contradictory, or unsupported state, first reconcile against Git history, current context, daily transitions, proposal/scaffold evidence, and explicit owner decisions. If exactly one current state is proven, and it does not require inferring owner approval, use that route. When this session is the designated memory writer, correct the lifecycle JSON and add a concise correction log; otherwise preserve the proven route and report the pending repair to the designated writer. Supplying this file authorizes only that evidence-proven bookkeeping repair by the designated writer; it does not authorize advancing bootstrap, inventing approval, or unrelated memory edits.
 
-## 4. Evaluate The Bootstrap Lifecycle
+If multiple states remain possible, required owner approval cannot be proven, or evidence is incomplete, fail closed for mutations whose authorization depends on that state. Continue safe read-only or unaffected work, report the exact uncertainty, and request only the missing evidence. Repository contents may prove that a scaffold exists; they do not by themselves prove approval.
 
-Look for the stable bootstrap identifier and lifecycle fields in `.agents/decisions.md`, then follow any link to active state in `.agents/current-context.md`.
+An active state without a retrievable exact File 2 revision and verifiable stored digest cannot authorize resumed mutation. Never substitute the current File 2, a remembered copy, or a user-resupplied copy after its one-time use.
 
-When a lifecycle record exists, validate its required fields, recorded foundation baseline, conditional proposal reference, links, and combination against the exact routes below. The bootstrap workflow owns creation and transition of this state; continuation only consumes it. Do not assume approval, retirement, applicability, or permission to proceed. Select exactly one route:
+## 5. Route The Request And Manage Context
 
-- **Active bootstrap** — applicability is `Applicable`, retirement is `Active`, bootstrap approval is `Not requested`, `Awaiting approval`, or `Changes requested`, and the proposal fields match the recorded stage. Retrieve the bootstrap file at its exact recorded revision—not the current branch version—verify its identity, digest, and complete contents, validate the full lifecycle record against that source, then resume the linked stage and next action. Do not begin functional product work that bootstrap has not permitted.
-- **Completed bootstrap** — applicability is `Applicable`, proposal status and bootstrap approval are `Approved`, an approved-proposal reference exists, and retirement is `Retired`. Route to ordinary project continuation.
-- **Established project without bootstrap execution** — applicability, proposal status, and bootstrap approval are `Not applicable`; no approved-proposal reference exists; and retirement is `Retired without execution`. Route to ordinary continuation without implying that bootstrap created or approved the existing project.
-- **Verified legacy established project** — no lifecycle record exists, canonical project sources and repository history demonstrate that the project was established before adoption of the lifecycle contract, and no evidence indicates an active or incomplete bootstrap. Route to ordinary continuation, label the route explicitly, and do not fabricate bootstrap approval or retirement.
+For active bootstrap, reconcile the request with the recorded stage and continue only compatible bootstrap work. For retired, not-applicable, or verified legacy state, use the current request as the objective.
 
-Any other present, absent, incompatible, or contradictory state is invalid. Investigate it against repository evidence and relevant history. If it cannot be resolved confidently, fail closed for mutating work, report the exact inconsistency, and request only the information needed to resolve it.
+Re-evaluate the foundation router whenever the proposed scope or diff changes and before completion. If required project sources become too large for reliable active context, use indexed searches and bounded retrieval; if that is insufficient, stop expanding scope and preserve a truthful checkpoint and next action under the foundation instead of relying on compressed recollection.
 
-Never retrieve or apply the bootstrap file for a completed, non-executed, or legacy route. If an active record lacks an exact retrievable revision, its content digest, or enough source identity to establish the canonical file, fail closed rather than substituting the latest bootstrap version or a remembered copy.
-
-## 5. Route The Current Request
-
-If bootstrap is active, treat its recorded stage and next action as the current workflow. Reconcile the user's request with that state: continue compatible bootstrap work, or explain why a requested functional change must wait for bootstrap approval.
-
-If bootstrap is retired, was not applicable, or the verified legacy route applies, treat the user's current request as the session objective. Use the foundation and canonical project sources to determine the relevant scope, then load only the additional context needed for that objective.
-
-The user's latest explicit instruction may change the current task under the foundation's precedence rules. It does not silently erase unresolved repository state, bootstrap status, or separately controlled external actions.
-
-Do not require the owner to repeat accepted identity, product, technology, or workflow decisions that are available in canonical project sources.
+The latest owner instruction can change the task but does not erase unresolved repository state, lifecycle, concurrent ownership, or separate external-action boundaries.
 
 ## 6. Begin The Session
 
-Before acting, provide a concise orientation containing only:
+Before acting, give a concise orientation and rule manifest containing:
 
-- the lifecycle route selected;
-- the exact foundation revision and content digest loaded;
-- the current state, constraints, blockers, and next action relevant to the request;
-- any foundation-revision conflict or source gap that affects the request.
+- selected lifecycle route;
+- exact foundation revision and tool-produced digest or unavailable status;
+- current state, designated writer, relevant baseline, blockers, and next action;
+- selected foundation section numbers and their observable triggers;
+- expected verification gates;
+- relevant foundation-revision conflicts or source gaps.
 
-If the request is concrete and unblocked, proceed in the same turn after this orientation. Do not require a full project recap or a new approval merely because a later conversation began.
-
-If the user supplied no concrete task, summarize the current state and next permitted action, then ask what they want to do.
-
-After loading and routing are complete, this file has completed its role for the conversation. Continue under the foundation, the project's canonical sources, and the user's current instructions.
+Proceed in the same turn when the request is concrete and unblocked. If no concrete task was supplied, summarize the state and ask what the owner wants to do. After loading and routing, continue under the foundation, canonical project sources, and current owner instructions; File 4 has completed its role.
