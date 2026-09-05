@@ -21,11 +21,11 @@ At least one evaluator who did not author the change must review the results. Un
 
 ## Current Evaluation Status
 
-- **Workflow revision:** `39ebe39a3148a19a89eb90eca375dee16f55f773`
-- **Evaluation date:** 2026-09-05
-- **Result:** 21 of 21 fixed scenarios passed; 4 run as project-state walkthroughs; corrective findings remain
-- **Independent review:** Yes
-- **Status:** Provisional
+- **Workflow revision:** `5878febc9f5ad5758d7baa61212299b44fdeeb5d`
+- **Evaluation date:** Pending
+- **Result:** Pending
+- **Independent review:** No
+- **Status:** Pending independent review
 
 ## Fixed Scenarios
 
