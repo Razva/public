@@ -146,7 +146,7 @@ sudo ln -sfn "/opt/node/node${NODE_MAJOR}/bin/npx" /usr/local/bin/npx &&
 sudo ln -sfn "/opt/node/node${NODE_MAJOR}/bin/corepack" /usr/local/bin/corepack
 ```
 
-Refresh all four symlinks when changing the selected version so non-interactive shells and persistent services use one runtime. Keep `/opt/node`, `/usr/local`, and the system prefix root-owned.
+Refresh all four symlinks when changing the selected version so non-interactive shells and persistent services use one runtime. Keep `/opt/node`, `/usr/local`, and the system prefix root-owned. Never make them writable by project users.
 
 Configure a per-user npm global prefix from the project user's normal login shell, never through `sudo npm install -g`:
 

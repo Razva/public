@@ -1,6 +1,6 @@
-# UI Component Patterns
+# Web UI Component Patterns
 
-This file is a reusable, language-neutral reference for product-quality web UI primitives. The [Vibe-Coded Project Bootstrap](../2-vibe-coding-bootstrap.md) loads it when the proposed product has a user interface, adopts the relevant approved contracts into the application's local UI documentation, and then treats that project-local contract as canonical.
+This file is a reusable, language-neutral reference for product-quality web UI primitives. The [Vibe-Coded Project Bootstrap](../2-vibe-coding-bootstrap.md) loads it when the proposed product has a web user interface, adopts the relevant approved contracts into the application's local UI documentation, and then treats that project-local contract as canonical.
 
 This reference is not a workflow. It grants no authority for mutation, Git, publication, deployment, external action, or browser automation. The [Vibe-Coded Project Foundation](../1-vibe-coding-foundation.md) and approved project contracts retain their defined precedence. If this reference conflicts or appears to conflict with them, stop applying the conflicting text and surface the conflict.
 

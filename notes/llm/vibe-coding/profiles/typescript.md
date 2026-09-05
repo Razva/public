@@ -40,6 +40,9 @@ Record the exact typecheck entry point and whether the project emits JavaScript,
 - Prefer `unknown` at untrusted boundaries and narrow it deliberately. `any` requires a concrete, documented interoperability reason and must not spread beyond its boundary adapter.
 - Do not use type assertions or non-null assertions merely to silence errors. Validate, narrow, redesign the contract, or document the proven invariant at the narrowest safe location.
 - Avoid type-level cleverness that makes ordinary maintenance harder. Split complex generic relationships by responsibility and expose the smallest stable public surface.
+- In component-based user interfaces, type component inputs and emitted events at their ownership boundary, avoid broad types that permit invalid property combinations, and preserve framework-supported inference instead of restating library types unnecessarily.
+- Model loading, empty, ready, validation, submission, failure, and conflict states without impossible combinations. Keep persisted domain values distinct from temporary form and presentation state.
+- Keep browser-only values and APIs out of server-only modules and vice versa.
 
 ## Runtime Validation
 
@@ -131,6 +134,7 @@ Choose rendering and data-access behaviour from product freshness, privacy, late
 - Avoid client request fan-out when a server/application boundary can return a consumer-shaped result safely.
 - Bound pagination, payloads, timeouts, cancellation, retries, and background refresh.
 - Verify framework caching and invalidation behaviour for the selected version from official documentation; do not rely on remembered defaults.
+- Treat hydration errors, layout shifts, stale client state, and older asynchronous responses as correctness issues when they can change user-visible meaning or lose work.
 
 Keep ORM, database, provider, and transport records behind their owning adapters. Next.js does not require a particular database, ORM, queue, authentication provider, or hosting platform.
 

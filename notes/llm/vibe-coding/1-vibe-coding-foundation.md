@@ -321,7 +321,7 @@ Product analytics, behavioral tracking, external crash/error reporting, trace ex
 
 For a user interface, establish a local contract for vocabulary, tokens, typography, spacing, density, color, shape/elevation, icons, primitives, keyboard/focus, responsiveness, accessibility, states, and visual QA. Local contracts and implemented shared primitives are canonical; examples are seeds.
 
-When the local UI contract does not cover a relevant component behavior, or the owner asks to reconsider it, retrieve the complete canonical [UI Component Patterns](references/ui-component-patterns.md) at an exact revision. Treat it only as a non-authoritative seed: it grants no permission, cannot weaken this foundation, and cannot override an approved project contract. Record any accepted project-specific result in the application's canonical `docs/ui/` contract rather than silently inheriting later reference changes.
+When a web UI's local contract does not cover a relevant component behavior, or the owner asks to reconsider it, retrieve the complete canonical [Web UI Component Patterns](https://github.com/Razva/public/blob/main/notes/llm/vibe-coding/references/web-ui-component-patterns.md) at an exact revision. Treat it only as a non-authoritative seed: it grants no permission, cannot weaken this foundation, and cannot override an approved project contract. Record any accepted project-specific result in the application's canonical `docs/ui/` contract rather than silently inheriting later reference changes.
 
 Own repeated interactions as shared primitives. Extend them coherently with stable defaults rather than creating feature-local competitors or changing shared structure for one caller. Use semantic roles, accessible names, complete keyboard use, visible focus, non-color-only state, and assistive-technology-readable errors/loading/disabled/empty states. Preserve lightweight state across view/layout switches unless account, permission, project, provider, or data scope changes.
 
@@ -422,7 +422,7 @@ On failure, stop in the safest documented state. Do not force-kill integrity wor
 
 Document project service names, paths, ports, environment sources, control commands, logs, health, caches, backups, and escalation. Use the service-owning identity unless an approved administrator action requires otherwise.
 
-For an eligible self-managed development server, the optional [server guidance](server/README.md) may supply reusable setup and operations procedures when the project's local contracts do not yet cover them. It is not a workflow step or authority grant. Select only applicable capabilities, and keep application-specific procedures in the application's own documentation.
+For an eligible self-managed development server, the optional [server guidance](https://github.com/Razva/public/blob/main/notes/llm/vibe-coding/server/README.md) may supply reusable setup and operations procedures when the project's local contracts do not yet cover them. It is not a workflow step or authority grant. Select only applicable capabilities, and keep application-specific procedures in the application's own documentation.
 
 Do not stop, restart, kill, disable, or edit a service because it merely looks suspicious; inspect and obtain authority. Do not print secrets or private/customer data in diagnostics. Interpret health signals against workload, configuration, and history.
 

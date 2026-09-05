@@ -21,7 +21,7 @@ During bootstrap, File 2 loads a relevant reference when the proposed product su
 
 | Reference | Load when |
 | --- | --- |
-| [UI Component Patterns](references/ui-component-patterns.md) | The product has a user interface and reusable component behaviour is relevant. |
+| [Web UI Component Patterns](references/web-ui-component-patterns.md) | The product has a web user interface and reusable component behaviour is relevant. |
 | [TypeScript Project Profile](profiles/typescript.md) | TypeScript is required, detected, or a credible candidate for the approved stack. Its Next.js section applies only when Next.js is independently relevant. |
 
 The foundation and approved project contracts always retain their defined precedence. If a reference conflicts or appears to conflict with them, the agent must surface the conflict and stop applying the conflicting reference text.
