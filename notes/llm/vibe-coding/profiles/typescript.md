@@ -40,6 +40,9 @@ Record the exact typecheck entry point and whether the project emits JavaScript,
 - Prefer `unknown` at untrusted boundaries and narrow it deliberately. `any` requires a concrete, documented interoperability reason and must not spread beyond its boundary adapter.
 - Do not use type assertions or non-null assertions merely to silence errors. Validate, narrow, redesign the contract, or document the proven invariant at the narrowest safe location.
 - Avoid type-level cleverness that makes ordinary maintenance harder. Split complex generic relationships by responsibility and expose the smallest stable public surface.
+
+For a TypeScript user interface, the foundation and the application's `docs/ui/` contract own behaviour, accessibility, responsiveness, and visual decisions. The canonical [Web UI Component Patterns](https://github.com/Razva/public/blob/main/notes/llm/vibe-coding/references/web-ui-component-patterns.md) is a separate conditional seed selected by the workflow; this profile does not make it applicable. Browser automation, screenshots, and visual-baseline changes remain governed by the foundation and the project's approved verification contract. The following rules refine only TypeScript implementation:
+
 - In component-based user interfaces, type component inputs and emitted events at their ownership boundary, avoid broad types that permit invalid property combinations, and preserve framework-supported inference instead of restating library types unnecessarily.
 - Model loading, empty, ready, validation, submission, failure, and conflict states without impossible combinations. Keep persisted domain values distinct from temporary form and presentation state.
 - Keep browser-only values and APIs out of server-only modules and vice versa.
@@ -123,6 +126,7 @@ After approval, store accepted decisions in the application repository. Later se
 - Treat route handlers, server actions, forms, uploads, search parameters, cookies, headers, and middleware input as untrusted boundaries. Validate input and enforce authorization server-side.
 - Do not perform consequential external writes during render, prefetch, metadata generation, loading, cache refresh, health checks, or incidental effects.
 - Use framework conventions where they preserve the application's ownership model. Do not place business rules in a framework hook or entry point merely because it is convenient.
+- Preserve server/client boundaries without sacrificing semantic HTML, keyboard operation, focus, assistive-technology status, error recovery, or container-aware responsiveness.
 
 ### Rendering, Data, And Caching
 

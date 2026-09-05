@@ -13,6 +13,8 @@ Use this sequence:
 
 Do not claim the changed workflows are finished or reviewed before this sequence is complete. Do not append past status blocks.
 
+Before each maintenance commit, run `notes/llm/vibe-coding/scripts/validate-workflow-integrity.sh` from anywhere inside the repository. A failure is a maintenance blocker. The check verifies that every tracked technology profile is registered in File 2, the README's people-facing profile overview contains the same profile set, and canonical and relative workflow links resolve to tracked paths. This repository-maintenance gate is not an application requirement and does not become part of Files 1–4.
+
 Evaluate every scenario for each workflow revision; `Not applicable` is not a passing result. At least three scenarios, selected to exercise the changed areas, must run as real or constructed project-state walkthroughs, fixtures, or automated tests rather than clause tracing. The working review must identify the method and evidence for each scenario, but retaining or publishing that detailed report is not required.
 
 Assess Files 1–4 at one exact Git commit. Never substitute current `main`, another revision, or general impressions of the workflow. The status block below records only the latest targeted workflow revision and its current evaluation state; replace it instead of appending history. A later change to any of Files 1–4 makes the recorded result outdated until that new workflow revision is evaluated.

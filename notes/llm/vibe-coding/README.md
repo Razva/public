@@ -21,7 +21,7 @@ During bootstrap, File 2 loads a relevant reference when the proposed product su
 
 | Reference | Load when |
 | --- | --- |
-| [Web UI Component Patterns](references/web-ui-component-patterns.md) | The product has a web user interface and reusable component behaviour is relevant. |
+| [Web UI Component Patterns](references/web-ui-component-patterns.md) | The product has a user interface; adopt only web-specific patterns relevant to its surfaces and stack. |
 | [TypeScript Project Profile](profiles/typescript.md) | TypeScript is required, detected, or a credible candidate for the approved stack. Its Next.js section applies only when Next.js is independently relevant. |
 
 The foundation and approved project contracts always retain their defined precedence. If a reference conflicts or appears to conflict with them, the agent must surface the conflict and stop applying the conflicting reference text.
@@ -55,5 +55,7 @@ File 3 may deliberately refuse to commit or push when it cannot verify its canon
 ## Maintaining These Files
 
 Before asking an agent to change Files 1–4, tell it to read this README and the complete [maintainer evaluation](workflow-evaluation.md). The evaluation file is the maintenance entry point; it is not a project prompt and should never be pasted into an application-development session.
+
+Run `notes/llm/vibe-coding/scripts/validate-workflow-integrity.sh` before every maintenance commit. It verifies that File 2 registers every tracked technology profile, the README profile overview agrees, and canonical and relative workflow links resolve.
 
 After a workflow change is committed, its exact revision remains `Pending independent review` until a different agent evaluates every fixed scenario. Only then may the current status become `Reviewed`. Do not describe changed workflow files as finished while their recorded revision or status is outdated.
