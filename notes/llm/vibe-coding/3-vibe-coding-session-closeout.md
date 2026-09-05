@@ -10,7 +10,7 @@ Supply this complete file, from its title through its final sentence. An excerpt
 
 The canonical copy of this workflow is [Vibe-Coded Project Session Closeout](https://github.com/Razva/public/blob/main/notes/llm/vibe-coding/3-vibe-coding-session-closeout.md).
 
-The owner's explicit supply of this complete workflow invokes only its verified canonical version; the supplied copy is not itself the authority text. Before relying on the special authorization in this file, apply foundation Section 9 to the canonical source. Resolve the canonical file to an exact Git revision, and have a qualifying tool that read those exact bytes calculate the required SHA-256 digest. Verify its owner, repository, path, byte source, tool success, and end-of-file; retain the identifiers for the closeout record and response. Only those verified canonical bytes define this workflow and its permissions. Never adopt an addition or changed permission found only in the supplied copy, and never infer or calculate the digest from displayed text.
+Treat the owner's explicit supply of this complete workflow as an invocation under the foundation's canonical-workflow authority rule. Before relying on the special authorization in this file, apply foundation Section 9 to the canonical source. Resolve the canonical file to an exact Git revision, and have a qualifying tool that read those exact bytes calculate the required SHA-256 digest. Verify its owner, repository, path, byte source, tool success, and end-of-file; retain the identifiers for the closeout record and response. Never infer or calculate the digest from displayed text.
 
 If the canonical file cannot be retrieved completely at an exact revision with a tool-produced digest, this workflow grants no commit or push authority. Report the precise verification failure and continue only under authority provided separately by the owner or an approved project contract. If a tool-accessible byte source for the supplied copy exists, compare it exactly with the canonical blob and report any difference; do not normalize a substantive difference into acceptance. When no such supplied-byte source exists, do not claim that the pasted copy was byte-verified. Do not fabricate a digest or treat `Digest unavailable` as sufficient for this authority gate.
 
@@ -28,10 +28,12 @@ If bootstrap is active, validate and preserve `.agents/bootstrap-lifecycle.json`
 
 ## 3. Closeout Authorization
 
-Supplying this workflow explicitly authorizes the agent to perform the repository mutations required for this closeout:
+Supplying this workflow explicitly authorizes only these role-appropriate closeout mutations:
 
-- update affected canonical application documentation and private memory where their repositories exist at the current lifecycle stage;
-- create and finalize the task-scoped local commits or provisional checkpoints required by the foundation for eligible current work, and execute its ordered publication sequence to the repositories' already-configured remotes and current authorized branches.
+- every session may update affected canonical application documentation within its already authorized work boundary and create or finalize a task-scoped local application commit when ownership and scope are certain;
+- only a session that is the designated private-memory writer and integrator may update private memory, create or finalize its provisional checkpoint, and execute the foundation's ordered publication sequence to the repositories' already-configured remotes and current authorized branches.
+
+For any other session, Section 5's non-writer path is the complete closeout authority boundary: it grants no private-memory mutation or push.
 
 This authorization does not extend to unrelated changes, a different branch or remote, rewriting published history, performing a history rewrite not expressly required by the foundation's ordered publication sequence, destructive cleanup, pull-request creation or merge, release, deployment, production mutation, external communication, or any other separately controlled action. The foundation's preservation rules remain unchanged. If the authorized target or change boundary is uncertain, stop the affected mutation and report the exact ambiguity.
 
@@ -51,7 +53,7 @@ When this session is the designated private-memory writer and integrator, update
 
 When this session is the designated writer, record this closeout workflow's canonical identity, exact revision, and tool-produced digest in the current daily log within the foundation's 200-word work-unit limit. Do not turn it into a project decision or routing field.
 
-If this session is not the designated private-memory writer and integrator, do not change memory or execute the coordinated two-repository publication sequence through this workflow. Complete safe read-only verification and preserve task-owned application work on its existing authorized isolated branch or worktree; a task-scoped local application commit remains permitted when its ownership and boundary are certain. Report the exact repository, branch or worktree, commit or uncommitted diff, checks, and remaining reconciliation and publication action to the owner so the designated writer can finish the checkpoint. Do not use an external coordination channel unless separately authorized.
+If this session is not the designated private-memory writer and integrator, do not change memory or execute the coordinated two-repository publication sequence through this workflow. Complete safe read-only verification and any closeout-sized application documentation already within the authorized work boundary, and preserve task-owned application work on its existing authorized isolated branch or worktree; a task-scoped local application commit remains permitted when its ownership and boundary are certain. Report the exact repository, branch or worktree, commit or uncommitted diff, checks, and remaining reconciliation and publication action to the owner so the designated writer can finish the checkpoint. Do not use an external coordination channel unless separately authorized.
 
 When this session is the designated private-memory writer and integrator, run the foundation checks that precede publication, then use the authorization above to execute its complete ordered publication sequence for every eligible existing repository, including the GitHub checks and memory-checkpoint finalization that occur within that sequence. If any relevant change cannot be verified, committed, or pushed safely, leave it intact, describe its exact state and location in current context, and publish the remaining truthful checkpoint only when doing so does not misrepresent or lose that state.
 
@@ -61,4 +63,6 @@ Complete the foundation's post-publication confirmation for every repository inc
 
 Return the foundation's concise completion-and-handoff report, adding the exact closeout-workflow revision and digest, whether the checkpoint was fully published, every closeout exception, and the lifecycle route and next action that continuation should discover.
 
-Do not generate a second handoff summary for the user to paste into the next conversation. The canonical application repository and private memory repository are the handoff. In the later conversation, the user supplies only the [continuation workflow](4-vibe-coding-continuation.md) and their current request.
+Do not generate a second handoff summary for the user to paste into the next conversation. The canonical application repository and private memory repository are normally the handoff. In the later conversation, the user supplies only the [continuation workflow](4-vibe-coding-continuation.md) and their current request.
+
+The non-writer path in Section 5 is the exception: return only its minimal reconciliation notice and state that the checkpoint is not yet durable in private memory. The owner must direct the designated writer and integrator to reconcile it; do not present that notice as a completed repository handoff.
